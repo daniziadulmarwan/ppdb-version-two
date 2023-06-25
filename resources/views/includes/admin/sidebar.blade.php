@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li class="nk-menu-item">
-                        <a href="/admin/chats" class="nk-menu-link">
+                        <a href="/admin/setting" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-setting"></em></span>
                             <span class="nk-menu-text">Settings</span>
                         </a>
