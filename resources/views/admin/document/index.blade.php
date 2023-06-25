@@ -42,15 +42,17 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>
-                                      <img src="/assets/images/avatar/a-sm.jpg" width="40" height="40" class="rounded-circle" alt="Avatar User">
+                                    <td class="nk-tb-col tb-col-mb">
+                                      <div class="user-avatar">
+                                        <img src="/assets/images/avatar/a-sm.jpg" alt="Avatar User">
+                                      </div>
                                     </td>
-                                    <td>PB2023-6MLE9UQ2</td>
-                                    <td>ANGGAR SIMBARDEWI</td>
-                                    <td>
+                                    <td class="nk-tb-col tb-col-mb">PB2023-6MLE9UQ2</td>
+                                    <td class="nk-tb-col tb-col-mb">ANGGAR SIMBARDEWI</td>
+                                    <td class="nk-tb-col tb-col-mb">
                                       <a href="#" class="btn btn-round btn-primary"><em class="icon ni ni-download-cloud"></em><span>Download</span> </a>
                                     </td>
-                                    <td>
+                                    <td class="nk-tb-col tb-col-mb">
                                       <a href="#" class="btn btn-round btn-success"><em class="icon ni ni-download-cloud"></em><span>Download</span> </a>
                                     </td>
                                 </tr>
