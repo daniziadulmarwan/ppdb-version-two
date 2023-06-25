@@ -12,7 +12,7 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between">
                         <div class="nk-block-head-content">
-                          <a href="/admin/student/create" class="btn btn-round btn-primary"><em class="icon ni ni-plus-circle"></em><span>Create New Student</span> </a>
+                          <button class="btn btn-round btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreateNewStudent"><em class="icon ni ni-plus-circle" ></em><span>Create New Student</span></button>
                         </div>
 
                         <div class="nk-block-head-content">
@@ -70,6 +70,8 @@
         </div>
     </div>
   </div>
+
+  @include('admin.student.create-modal')
 @endsection
 
 
