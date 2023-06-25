@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@push('style')
+    <style>
+        .big-size {
+        font-size: 32px;
+        }
+    </style>
+@endpush
+
 @section('content')
   <div class="nk-content">
     <div class="container-fluid">
@@ -25,97 +33,71 @@
 
                 <div class="nk-block">
                     <div class="row g-gs">
-                        <div class="col-xxl-3 col-sm-6">
+
+                        <!-- Start 4 Card -->
+                        <div class="col-md-3">
                             <div class="card">
-                                <div class="nk-ecwg nk-ecwg6">
-                                    <div class="card-inner">
-                                        <div class="card-title-group">
-                                            <div class="card-title">
-                                                <h6 class="title">Today Orders</h6>
-                                            </div>
-                                        </div>
-                                        <div class="data">
-                                            <div class="data-group">
-                                                <div class="amount">1,945</div>
-                                                <div class="nk-ecwg6-ck">
-                                                    <canvas class="ecommerce-line-chart-s3" id="todayOrders"></canvas>
-                                                </div>
-                                            </div>
-                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span></div>
-                                        </div>
-                                    </div><!-- .card-inner -->
-                                </div><!-- .nk-ecwg -->
-                            </div><!-- .card -->
+                                <div class="card-body" style="display: flex; justify-content: space-between;align-items: center">
+                                    <div class="card-title">
+                                        <h6 class="title pt-2" style="font-size: 18px;">Total Pendaftar</h6>
+                                        <div class="amount" style="font-size: 32px; font-weight: bold">96</div>
+                                        <div class="info"><span class="change up text-danger"><em class="icon ni ni-user-alt"></em> Peserta Didik</span></div>
+                                    </div>
+                                    <div class="bg-info-dim" style="display: inline-flex; width: 60px; height: 60px; justify-content: center; align-items: center; border-radius: 10px">
+                                        <span class="icon ni ni-users bg-info-dim big-size"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="col-xxl-3 col-sm-6">
+                        <div class="col-md-3">
                             <div class="card">
-                                <div class="nk-ecwg nk-ecwg6">
-                                    <div class="card-inner">
-                                        <div class="card-title-group">
-                                            <div class="card-title">
-                                                <h6 class="title">Today Revenue</h6>
-                                            </div>
-                                        </div>
-                                        <div class="data">
-                                            <div class="data-group">
-                                                <div class="amount">$2,338</div>
-                                                <div class="nk-ecwg6-ck">
-                                                    <canvas class="ecommerce-line-chart-s3" id="todayRevenue"></canvas>
-                                                </div>
-                                            </div>
-                                            <div class="info"><span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>2.34%</span><span> vs. last week</span></div>
-                                        </div>
-                                    </div><!-- .card-inner -->
-                                </div><!-- .nk-ecwg -->
-                            </div><!-- .card -->
+                                <div class="card-body" style="display: flex; justify-content: space-between;align-items: center">
+                                    <div class="card-title">
+                                        <h6 class="title pt-2" style="font-size: 18px;">MA Al-Amin</h6>
+                                        <div class="amount" style="font-size: 32px; font-weight: bold">40</div>
+                                        <div class="info"><span class="change up text-danger"><em class="icon ni ni-user-alt"></em> Peserta Didik</span></div>
+                                    </div>
+                                    <div class="bg-success-dim" style="display: inline-flex; width: 60px; height: 60px; justify-content: center; align-items: center; border-radius: 10px">
+                                        <span class="icon ni ni-award bg-success-dim big-size"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="col-xxl-3 col-sm-6">
+                        <div class="col-md-3">
                             <div class="card">
-                                <div class="nk-ecwg nk-ecwg6">
-                                    <div class="card-inner">
-                                        <div class="card-title-group">
-                                            <div class="card-title">
-                                                <h6 class="title">Today Customers</h6>
-                                            </div>
-                                        </div>
-                                        <div class="data">
-                                            <div class="data-group">
-                                                <div class="amount">847</div>
-                                                <div class="nk-ecwg6-ck">
-                                                    <canvas class="ecommerce-line-chart-s3" id="todayCustomers"></canvas>
-                                                </div>
-                                            </div>
-                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span></div>
-                                        </div>
-                                    </div><!-- .card-inner -->
-                                </div><!-- .nk-ecwg -->
-                            </div><!-- .card -->
+                                <div class="card-body" style="display: flex; justify-content: space-between;align-items: center">
+                                    <div class="card-title">
+                                        <h6 class="title pt-2" style="font-size: 18px;">MTs Al-Amin</h6>
+                                        <div class="amount" style="font-size: 32px; font-weight: bold">56</div>
+                                        <div class="info"><span class="change up text-danger"><em class="icon ni ni-user-alt"></em> Peserta Didik</span></div>
+                                    </div>
+                                    <div class="bg-danger-dim" style="display: inline-flex; width: 60px; height: 60px; justify-content: center; align-items: center; border-radius: 10px">
+                                        <span class="icon ni ni-building bg-danger-dim big-size"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="col-xxl-3 col-sm-6">
+                        <div class="col-md-3">
                             <div class="card">
-                                <div class="nk-ecwg nk-ecwg6">
-                                    <div class="card-inner">
-                                        <div class="card-title-group">
-                                            <div class="card-title">
-                                                <h6 class="title">Today Visitors</h6>
-                                            </div>
-                                        </div>
-                                        <div class="data">
-                                            <div class="data-group">
-                                                <div class="amount">23,485</div>
-                                                <div class="nk-ecwg6-ck">
-                                                    <canvas class="ecommerce-line-chart-s3" id="todayVisitors"></canvas>
-                                                </div>
-                                            </div>
-                                            <div class="info"><span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>2.34%</span><span> vs. last week</span></div>
-                                        </div>
-                                    </div><!-- .card-inner -->
-                                </div><!-- .nk-ecwg -->
-                            </div><!-- .card -->
+                                <div class="card-body" style="display: flex; justify-content: space-between;align-items: center">
+                                    <div class="card-title">
+                                        <h6 class="title pt-2" style="font-size: 18px;">Pesantren</h6>
+                                        <div class="amount" style="font-size: 32px; font-weight: bold">45</div>
+                                        <div class="info"><span class="change up text-danger"><em class="icon ni ni-user-alt"></em> Peserta Didik</span></div>
+                                    </div>
+                                    <div class="bg-primary-dim" style="display: inline-flex; width: 60px; height: 60px; justify-content: center; align-items: center; border-radius: 10px">
+                                        <span class="icon ni ni-sun bg-primary-dim big-size"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- End 4 Card -->
+
+
+                        
 
                         <div class="col-xxl-6">
                             <div class="card card-full">
