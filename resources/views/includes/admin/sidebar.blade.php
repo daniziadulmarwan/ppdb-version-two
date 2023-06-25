@@ -36,13 +36,13 @@
                         </a>
                     </li>
                     <li class="nk-menu-item">
-                        <a href="/admin/chats" class="nk-menu-link">
+                        <a href="/admin/document" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-archived-fill"></em></span>
                             <span class="nk-menu-text">Documents</span>
                         </a>
                     </li>
                     <li class="nk-menu-item">
-                        <a href="/admin/chats" class="nk-menu-link">
+                        <a href="/admin/contact" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
                             <span class="nk-menu-text">Contacts</span>
                         </a>
