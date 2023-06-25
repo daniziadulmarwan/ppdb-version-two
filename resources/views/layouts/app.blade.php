@@ -25,9 +25,13 @@
 <body class="nk-body bg-lighter npc-default has-sidebar ">
     <div class="nk-app-root">
         <div class="nk-main ">
+
             @include('includes.admin.sidebar')
+
             <div class="nk-wrap ">
+
                 @include('includes.admin.topbar')
+                
                 @yield('content')
 
                 <!-- footer @s -->
