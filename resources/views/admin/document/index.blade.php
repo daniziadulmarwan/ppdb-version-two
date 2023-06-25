@@ -19,7 +19,7 @@
                           <nav>
                             <ul class="breadcrumb breadcrumb-arrow">
                                 <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                                <li class="breadcrumb-item active">Contact</li>
+                                <li class="breadcrumb-item active">Document</li>
                             </ul>
                           </nav>
                         </div>
@@ -33,20 +33,26 @@
                           <table class="datatable-init-export nowrap table" data-export-title="Export">
                             <thead>
                                 <tr>
+                                    <th>Foto</th>
                                     <th>No. Reg</th>
                                     <th>Name</th>
-                                    <th>Phone Number</th>
-                                    <th>Email</th>
-                                    <th>Address</th>
+                                    <th>Kartu Keluarga</th>
+                                    <th>Akte Kelahiran</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>
+                                      <img src="/assets/images/avatar/a-sm.jpg" width="40" height="40" class="rounded-circle" alt="Avatar User">
+                                    </td>
                                     <td>PB2023-6MLE9UQ2</td>
                                     <td>ANGGAR SIMBARDEWI</td>
-                                    <td>0116489552</td>
-                                    <td>anggar.simbardewi@gmail.com</td>
-                                    <td>Jl. Kertoleksono 93D, Lowokwaru, Malang</td>
+                                    <td>
+                                      <a href="#" class="btn btn-round btn-primary"><em class="icon ni ni-download-cloud"></em><span>Download</span> </a>
+                                    </td>
+                                    <td>
+                                      <a href="#" class="btn btn-round btn-success"><em class="icon ni ni-download-cloud"></em><span>Download</span> </a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

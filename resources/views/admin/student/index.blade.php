@@ -12,7 +12,7 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between">
                         <div class="nk-block-head-content">
-                            <h3 class="nk-block-title page-title">Students</h3>
+                          <a href="/admin/student/create" class="btn btn-round btn-primary"><em class="icon ni ni-plus-circle"></em><span>Create New Student</span> </a>
                         </div>
 
                         <div class="nk-block-head-content">
@@ -23,7 +23,7 @@
                             </ul>
                           </nav>
                         </div>
-                    </div>
+                      </div>
                 </div>
 
                 <div class="nk-block">
