@@ -12,8 +12,9 @@ Route::view('/admin/student', 'admin.student.index');
 Route::view('/admin/document', 'admin.document.index');
 Route::view('/admin/contact', 'admin.contact.index');
 Route::view('/admin/chats', 'admin.chat.index');
+Route::view('/admin/setting', 'admin.setting.index');
 
 // Wrong Route
-Route::fallback(function() {
+Route::fallback(function () {
   return view('pages.404');
 });
