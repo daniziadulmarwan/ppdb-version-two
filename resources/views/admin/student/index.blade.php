@@ -43,14 +43,27 @@
                                 </tr>
                             </thead>
                             <tbody>
+                              @foreach ($data as $item)
                                 <tr>
-                                    <td>PB2023-6MLE9UQ2</td>
-                                    <td>ANGGAR SIMBARDEWI</td>
-                                    <td>0116489552</td>
-                                    <td>Madrasah Tsanawiyah</td>
-                                    <td>SD Negeri Bojongwaru 01</td>
+                                    <td>{{ $item->reg_number }}</td>
+                                    <td>{{ $item->fullname }}</td>
+                                    <td>{{ $item->nisn }}</td>
+                                    <td>{{ $item->jenjang === 1 ? 'Tsanawiyah' : 'Aliyah' }}</td>
+                                    <td>{{ $item->asal_sekolah ?? '-' }}</td>
                                     <td>
-                                      <span class="badge badge-dim rounded-pill bg-success">accepted</span>
+                                      @if ($item->status === 'pending')
+                                        <span class="badge badge-dim rounded-pill bg-warning">
+                                          {{ $item->status }}
+                                        </span> 
+                                      @elseif($item->status === 'accept')
+                                        <span class="badge badge-dim rounded-pill bg-success">
+                                          {{ $item->status }}
+                                        </span>
+                                      @else
+                                        <span class="badge badge-dim rounded-pill bg-danger">
+                                          {{ $item->status }}
+                                        </span>
+                                      @endif
                                     </td>
                                     <td>
                                       <a href="#" class="btn btn-icon btn-sm btn-warning rounded-circle"><em class="icon ni ni-edit-alt"></em></a>
@@ -59,6 +72,7 @@
                                       <a href="#" class="btn btn-icon btn-sm btn-info rounded-circle"><em class="icon ni ni-file-text"></em></a>
                                     </td>
                                 </tr>
+                              @endforeach
                             </tbody>
                         </table>
                         </div>

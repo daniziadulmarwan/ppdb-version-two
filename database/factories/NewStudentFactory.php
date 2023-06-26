@@ -29,41 +29,41 @@ class NewStudentFactory extends Factory
             'tahun_ppdb' => date('Y'),
 
             // Data Pribadi
-            'fullname' => $this->faker->name(),
+            'fullname' => fake()->name(),
             'nisn' => '12233435456546',
-            'nik' => $this->faker()->nik(),
+            'nik' => fake()->nik(),
             'gender' => mt_rand(1, 2),
-            'born_place' => $this->faker->city(),
-            'born_date' => $this->faker->dateTime('Y-m-d'),
+            'born_place' => fake()->city(),
+            'born_date' => fake()->dateTime('Y-m-d'),
             'agama' => mt_rand(1, 6),
             'status_keluarga' => mt_rand(1, 6),
             'jumlah_saudara' => mt_rand(1, 8),
             'anak_ke' => mt_rand(1, 8),
-            'wa_number' => $this->faker->phoneNumber(),
-            'email' => $this->faker->email(),
+            'wa_number' => fake()->phoneNumber(),
+            'email' => fake()->email(),
 
             // Alamat
-            'address' => $this->faker->address(),
+            'address' => fake()->address(),
             'kode_pos' => mt_rand(12345, 67890),
             'rt' => mt_rand(01, 06),
             'rw' => mt_rand(01, 06),
-            'province' => $this->faker->city(),
-            'regency' => $this->faker->city(),
-            'district' => $this->faker->city(),
-            'village' => $this->faker->city(),
+            'province' => fake()->city(),
+            'regency' => fake()->city(),
+            'district' => fake()->city(),
+            'village' => fake()->city(),
 
             // Data Orang Tua
-            'no_kk' => $this->faker()->nik(),
-            'nik_ayah' => $this->faker()->nik(),
-            'nama_ayah' => $this->faker->name(),
+            'no_kk' => fake()->nik(),
+            'nik_ayah' => fake()->nik(),
+            'nama_ayah' => fake()->name(),
             'pekerjaan_ayah' => mt_rand(1, 10),
             'penghasilan_ayah' => mt_rand(1, 7),
-            'nik_ibu' => $this->faker()->nik(),
-            'nama_ibu' => $this->faker->name(),
+            'nik_ibu' => fake()->nik(),
+            'nama_ibu' => fake()->name(),
             'pekerjaan_ibu' => mt_rand(1, 10),
 
             // Upload Berkas
-            'kk' => $this->faker->date('Ymd'),
+            'kk' => fake()->date('Ymd'),
 
             // Validation
             'agree' => 'checked',

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\NewStudent;
 use App\Models\Pendaftaran;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -19,6 +20,6 @@ class DatabaseSeeder extends Seeder
             'password_text' => 'password'
         ]);
 
-        Pendaftaran::factory(20)->create();
+        NewStudent::factory(20)->create();
     }
 }
