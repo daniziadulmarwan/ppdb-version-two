@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class PowerSwitch extends Component
 {
-    public $switch = 0;
+    public $switch = 'on';
 
     public function render()
     {
@@ -15,10 +15,7 @@ class PowerSwitch extends Component
 
     public function changeSwitch()
     {
-        if ($this->switch == 0) {
-            $this->switch = 1;
-        } else {
-            $this->switch = 0;
-        }
+
+        $this->switch = 'on';
     }
 }
