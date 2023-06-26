@@ -13,8 +13,17 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between">
                         <div class="nk-block-head-content">
-                            <h3 class="nk-block-title page-title">Settings</h3>
+                            <h3 class="nk-block-title page-title"></h3>
                         </div>
+
+                        <div class="nk-block-head-content">
+                            <nav>
+                              <ul class="breadcrumb breadcrumb-arrow">
+                                  <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                                  <li class="breadcrumb-item active">Setting</li>
+                              </ul>
+                            </nav>
+                          </div>
                     </div>
                 </div>
                 <div class="nk-block nk-block-lg">

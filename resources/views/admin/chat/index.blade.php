@@ -7,6 +7,24 @@
 <div class="nk-content">
   <div class="nk-content-inner">
       <div class="nk-content-body">
+
+        <div class="nk-block-head nk-block-head-sm">
+            <div class="nk-block-between">
+                <div class="nk-block-head-content">
+                </div>
+
+                <div class="nk-block-head-content">
+                  <nav>
+                    <ul class="breadcrumb breadcrumb-arrow">
+                        <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                        <li class="breadcrumb-item active">Chat</li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+        </div>
+
+
           <div class="nk-chat">
               <div class="nk-chat-aside">
                 <div class="nk-chat-aside-head">
