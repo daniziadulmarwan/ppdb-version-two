@@ -12,6 +12,7 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'username' => mt_rand(2233445566, 4455667788),
             'password' => bcrypt('password'),
+            'password_text' => 'password'
         ];
     }
 }
