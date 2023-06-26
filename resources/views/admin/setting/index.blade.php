@@ -49,84 +49,18 @@
                                         </div>
                                     </div>
                                     <div class="row g-gs">
-                                      @include('admin.setting.power-switch')
+                                        @include('admin.setting.power-switch')
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tabThree">
                                     <div class="nk-block-head">
                                         <div class="nk-block-head-content">
-                                            <h4 class="title nk-block-title">Email-Settings</h4>
-                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                                            <h4 class="title nk-block-title">Change Password</h4>
+                                            <p>If you want to be secret, Probably you should change your password.</p>
                                         </div>
                                     </div>
                                     <div class="row g-gs">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="form-label">E-mail to students</label>
-                                                <ul class="custom-control-group g-3 align-center">
-                                                    <li>
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="pay-card">
-                                                            <label class="custom-control-label" for="pay-card">Course enrolement</label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="pay-bitcoin">
-                                                            <label class="custom-control-label" for="pay-bitcoin">Add new lesson</label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="pay-cash">
-                                                            <label class="custom-control-label" for="pay-cash">Update newsletter</label>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="form-label">E-mail to Teachers</label>
-                                                <ul class="custom-control-group g-3 align-center">
-                                                    <li>
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="pay-cardd">
-                                                            <label class="custom-control-label" for="pay-cardd">Course sale</label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="pay-bitcoinn">
-                                                            <label class="custom-control-label" for="pay-bitcoinn">Support student</label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="pay-cashh">
-                                                            <label class="custom-control-label" for="pay-cashh">Feedback course</label>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                    <div class="form-icon form-icon-right">
-                                                        <em class="icon ni ni-search"></em>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="default-04" placeholder="E-mail from a name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row g-3">
-                                        <div class="col-lg-7">
-                                            <div class="form-group mt-2">
-                                                <button type="submit" class="btn btn-lg btn-primary" data-bs-target="#modalAlert" data-bs-toggle="modal">Update</button>
-                                            </div>
-                                        </div>
+                                        @include('admin.setting.change-password')
                                     </div>
                                 </div>
                             </div>

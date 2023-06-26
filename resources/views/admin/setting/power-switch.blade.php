@@ -12,7 +12,7 @@
         </div>
 
         <div class="text-center mt-3">
-          <h5 class="text-danger">Pendaftaran Ditutup</h5>
+          <h5 class="text-danger badge badge-danger">Pendaftaran Ditutup</h5>
         </div>
       </div>
     </div>
