@@ -71,6 +71,8 @@
         </div>
     </div>
   </div>
+
+  @include('admin.setting.create-user')
 @endsection
 
 @push('script')
