@@ -1,161 +1,7 @@
 @extends('layouts.app')
 
 @push('style')
-  <style>
-    /* Power Switch Style Start */
-    .power-switch-wrapper {
-      position: relative;
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    input {
-      display: none;
-    }
-
-    .toggleWrapper {
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all .2s;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: #fe4551;
-      box-shadow: 0 20px 20px 0 rgba(#fe4551, 0.3);
-      
-      &:active {
-        width: 95px;
-        height: 95px;
-        box-shadow: 0 15px 15px 0 rgba(#fe4551, 0.5);
-        
-        .toggle {
-          height: 17px;
-          width: 17px;
-        }
-      }
-      
-      .toggle {
-        transition: all 0.2s ease-in-out;
-        height: 20px;
-        width: 20px;
-        background-color: transparent;
-        border: 10px solid #fff;
-        border-radius: 50%;
-        cursor: pointer;
-        
-        animation: red .7s linear forwards;
-      }
-    }
-
-    .background {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-color: #fef5f4;
-    }
-
-    input:checked {
-      & ~ .background {
-        background-color: #f9faf7;
-      }
-      & + .toggleWrapper {
-        background-color: #48e98a;
-        box-shadow: 0 20px 20px 0 rgba(#48e98a, 0.3);
-        
-        &:active {
-          box-shadow: 0 15px 15px 0 rgba(#48e98a, 0.5);
-        }
-
-        .toggle {
-          width: 0;
-          background-color: #fff;
-          border-color: transparent;
-          border-radius: 30px;
-          animation: green .7s linear forwards !important;
-        }
-      }
-    }
-    
-    .footer {
-      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      left: calc(50% - 96px);
-      bottom: 0;
-      font-style: italic;
-      font-size: 12px;
-      color: #212121;
-      background-color: white;
-      padding: 15px 20px;
-      border-radius: 5px 5px 0 0;
-      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
-      text-align: center;
-
-      a {
-        color: #222;
-      }
-    }
-
-    @keyframes red {
-      0% {
-        height: 30px;
-        width: 0;
-        border-width: 5px;
-      }
-      55% {
-        height: 13px;
-        width: 27px;
-        border-width: 10px;
-      }
-      
-      70% {
-        height: 20px;
-        width: 20px;
-        border-width: 10px;
-      }
-      
-      85% {
-        height: 15px;
-        width: 25px;
-        border-width: 10px;
-      }
-      
-      100% {
-        height: 20px;
-        width: 20px;
-        border-width: 10px;
-      }
-    }
-
-    @keyframes green {
-      0% {
-        height: 20px;
-        width: 20px;
-        border-width: 10px;
-      }
-      25%, 55%, 85% {
-        height: 30px;
-        width: 5px;
-        border-width: 5px;
-      }
-      
-      40%, 70%, 100% {
-        height: 30px;
-        width: 0;
-        border-width: 5px;
-      }
-    }
-    /* Power Switch Style End */
-  </style>
+  <link rel="stylesheet" href="/assets/power-switch.css">
 @endpush
 
 @section('content')
@@ -295,18 +141,16 @@
 
 @push('script')
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
   <script>
-    $(document).ready(function() {
-      $('.toggleWrapper').click(function() {
-        let res = $('.opo').attr(':checked')
-        if(res === undefined) {
-          $('.opo').attr(':checked')
-        } else {
-          $('.opo').remove(':checked')
-        }
-      });
-    })
+    const switchPowerButton = document.querySelector('.power-switch-button');
+    const toggleWrapper = document.querySelector('.toggleWrapper');
+    toggleWrapper.addEventListener('click', function() {
+      if(switchPowerButton.checked) {
+        console.log(0)
+      } else {
+        console.log(1)
+      }
+    });
   </script>
 @endpush

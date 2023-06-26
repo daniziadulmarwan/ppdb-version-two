@@ -6,9 +6,9 @@
               <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
           </div>
           <div class="nk-header-brand d-xl-none">
-              <a href="html/index.html" class="logo-link">
-                  <img class="logo-light logo-img" src="/assets/images/logo.png" srcset="/assets/images/logo2x.png 2x" alt="logo">
-                  <img class="logo-dark logo-img" src="/assets/images/logo-dark.png" srcset="/assets/images/logo-dark2x.png 2x" alt="logo-dark">
+              <a href="/admin/dashboard" class="logo-link">
+                  <img class="logo-light logo-img" src="/assets/images/ppdb.png" srcset="/assets/images/ppdb.png 2x" alt="logo">
+                  <img class="logo-dark logo-img" src="/assets/images/ppdb.png" srcset="/assets/images/ppdb.png 2x" alt="logo-dark">
               </a>
           </div>
           

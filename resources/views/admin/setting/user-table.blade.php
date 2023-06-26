@@ -2,6 +2,7 @@
   <div class="card">
     <div class="nk-ecwg nk-ecwg6">
         <div class="card-inner">
+          <button class="btn btn-success btn-round mb-3"><em class="icon ni ni-plus-circle"></em></em><span>Create New User</span> </button>
           <table class="datatable-init table">
             <thead>
                 <tr>
