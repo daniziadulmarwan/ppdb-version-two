@@ -47,14 +47,17 @@ return new class extends Migration
             $table->string('village');
 
             // Data Orang Tua
+            $table->string('no_kk')->nullable();
+            $table->string('nik_ayah')->nullable();
             $table->string('nama_ayah');
             $table->integer('pekerjaan_ayah')->nullable();
             $table->integer('penghasilan_ayah')->nullable();
+            $table->string('nik_ibu')->nullable();
             $table->string('nama_ibu')->nullable();
             $table->integer('pekerjaan_ibu')->nullable();
 
             // Data Sekolah Asal
-            $table->string('asal_sekolah');
+            $table->string('asal_sekolah')->nullable();
             $table->string('seri_ijazah')->nullable();
 
             // Upload Berkas

@@ -41,9 +41,12 @@ class PendaftaranFactory extends Factory
             'district' => $this->faker->city(),
             'village' => $this->faker->city(),
 
+            'no_kk' => $this->faker()->nik(),
+            'nik_ayah' => $this->faker()->nik(),
             'nama_ayah' => $this->faker->name(),
             'pekerjaan_ayah' => mt_rand(1, 10),
             'penghasilan_ayah' => mt_rand(1, 7),
+            'nik_ibu' => $this->faker()->nik(),
             'nama_ibu' => $this->faker->name(),
             'pekerjaan_ibu' => mt_rand(1, 10),
 
