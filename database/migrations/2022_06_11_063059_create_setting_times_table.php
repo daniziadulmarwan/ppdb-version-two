@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('setting_times', function (Blueprint $table) {
             $table->id();
-            $table->enum('waktu', [1, 2]);
+            $table->enum('time', ['on', 'off']);
             $table->timestamps();
         });
     }
