@@ -2,6 +2,7 @@
 
 @push('style')
   <link rel="stylesheet" href="/assets/power-switch.css">
+  @livewireStyles
 @endpush
 
 @section('content')
@@ -49,8 +50,7 @@
                                         </div>
                                     </div>
                                     <div class="row g-gs">
-                                        {{-- @include('admin.setting.power-switch') --}}
-                                        @livewire('power-switch')
+                                        @include('admin.setting.power-switch')
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tabThree">
@@ -78,16 +78,5 @@
 
 @push('script')
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
-
-  {{-- <script>
-    const switchPowerButton = document.querySelector('.power-switch-button');
-    const toggleWrapper = document.querySelector('.toggleWrapper');
-    toggleWrapper.addEventListener('click', function() {
-      if(switchPowerButton.checked) {
-        console.log(0)
-      } else {
-        console.log(1)
-      }
-    });
-  </script> --}}
+  @livewireScripts
 @endpush
