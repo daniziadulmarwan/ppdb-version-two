@@ -49,7 +49,8 @@
                                         </div>
                                     </div>
                                     <div class="row g-gs">
-                                        @include('admin.setting.power-switch')
+                                        {{-- @include('admin.setting.power-switch') --}}
+                                        @livewire('power-switch')
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tabThree">
@@ -78,7 +79,7 @@
 @push('script')
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
 
-  <script>
+  {{-- <script>
     const switchPowerButton = document.querySelector('.power-switch-button');
     const toggleWrapper = document.querySelector('.toggleWrapper');
     toggleWrapper.addEventListener('click', function() {
@@ -88,5 +89,5 @@
         console.log(1)
       }
     });
-  </script>
+  </script> --}}
 @endpush

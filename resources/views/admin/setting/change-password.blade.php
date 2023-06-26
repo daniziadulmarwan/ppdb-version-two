@@ -30,7 +30,7 @@
           </div>
 
           <div class="form-group">
-              <button type="submit" class="btn btn-lg btn-primary btn-block">Submit Now</button>
+              <button type="submit" class="btn btn-lg btn-success btn-block">Submit Now</button>
           </div>
         </form>
       </div>
