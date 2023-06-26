@@ -5,16 +5,8 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\NewStudent>
- */
 class NewStudentFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
@@ -30,7 +22,7 @@ class NewStudentFactory extends Factory
 
             // Data Pribadi
             'fullname' => fake()->name(),
-            'nisn' => '12233435456546',
+            'nisn' => '0116489552',
             'nik' => fake()->nik(),
             'gender' => mt_rand(1, 2),
             'born_place' => fake()->city(),
