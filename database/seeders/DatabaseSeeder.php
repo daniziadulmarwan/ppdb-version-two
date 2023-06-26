@@ -12,19 +12,11 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::factory()->create([
-            [
-                'name' => 'Dr. Hasan Zavair Marwan, M.A.',
-                'username' => '2233445566',
-                'password' => bcrypt('password'),
-                'password_text' => 'password'
-            ],
-            [
-                'name' => 'Waris, S.T.',
-                'username' => '3344556677',
-                'password' => bcrypt('password'),
-                'password_text' => 'password'
-            ]
+        User::create([
+            'name' => 'Dr. Hasan Zavair Marwan, M.A.',
+            'username' => '2233445566',
+            'password' => bcrypt('password'),
+            'password_text' => 'password'
         ]);
 
         Pendaftaran::factory(20)->create();

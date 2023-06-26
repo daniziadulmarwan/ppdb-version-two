@@ -23,15 +23,14 @@ class PendaftaranFactory extends Factory
             'gender' => mt_rand(1, 2),
             'born_place' => $this->faker->city(),
             'born_date' => $this->faker->dateTime('Y-m-d'),
-            'jumlah_saudara' => mt_rand(1, 8),
-            'anak_ke' => mt_rand(1, 8),
-            'hobi' => mt_rand(1, 6),
             'agama' => mt_rand(1, 6),
             'status_keluarga' => mt_rand(1, 6),
-            'cita_cita' => mt_rand(1, 10),
+            'jumlah_saudara' => mt_rand(1, 8),
+            'anak_ke' => mt_rand(1, 8),
             'wa_number' => $this->faker->phoneNumber(),
             'email' => $this->faker->email(),
 
+            // Alamat
             'address' => $this->faker->address(),
             'kode_pos' => mt_rand(12345, 67890),
             'rt' => mt_rand(01, 06),
@@ -41,6 +40,7 @@ class PendaftaranFactory extends Factory
             'district' => $this->faker->city(),
             'village' => $this->faker->city(),
 
+            // Data Orang Tua
             'no_kk' => $this->faker()->nik(),
             'nik_ayah' => $this->faker()->nik(),
             'nama_ayah' => $this->faker->name(),
@@ -49,8 +49,6 @@ class PendaftaranFactory extends Factory
             'nik_ibu' => $this->faker()->nik(),
             'nama_ibu' => $this->faker->name(),
             'pekerjaan_ibu' => mt_rand(1, 10),
-
-            'asal_sekolah' => $this->faker->state(),
 
             'kk' => $this->faker->date('Ymd'),
             'akte' => $this->faker->date('Ymd'),
