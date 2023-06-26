@@ -5,18 +5,30 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class PendaftaranFactory extends Factory
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\NewStudent>
+ */
+class NewStudentFactory extends Factory
 {
-    public function definition()
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
     {
         return [
+            // Data Pilihan Sekolah
             'reg_number' => Str::upper('pb' . date('Y') . '-' . Str::random(8)),
             'jenjang' => mt_rand(1, 2),
             'is_pesantren' => mt_rand(1, 2),
             'tahun_lulus' => mt_rand(2020, 2022),
             'jenis_pendaftaran' => mt_rand(1, 2),
+
+            // from empty input javascript
             'tahun_ppdb' => date('Y'),
 
+            // Data Pribadi
             'fullname' => $this->faker->name(),
             'nisn' => '12233435456546',
             'nik' => $this->faker()->nik(),
@@ -50,8 +62,10 @@ class PendaftaranFactory extends Factory
             'nama_ibu' => $this->faker->name(),
             'pekerjaan_ibu' => mt_rand(1, 10),
 
+            // Upload Berkas
             'kk' => $this->faker->date('Ymd'),
-            'akte' => $this->faker->date('Ymd'),
+
+            // Validation
             'agree' => 'checked',
         ];
     }

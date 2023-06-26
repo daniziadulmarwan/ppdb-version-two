@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        Schema::create('pendaftarans', function (Blueprint $table) {
+        Schema::create('new_students', function (Blueprint $table) {
             $table->id();
 
             // Data Pilihan Sekolah
@@ -68,12 +68,13 @@ return new class extends Migration
             // Validation
             $table->string('agree');
             $table->enum('status', ['reject', 'accept', 'pending'])->default('pending');
+
             $table->timestamps();
         });
     }
 
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('pendaftarans');
+        Schema::dropIfExists('new_students');
     }
 };
