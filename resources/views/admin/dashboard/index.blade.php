@@ -110,12 +110,26 @@
 
                         <div class="col-md-4">
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body" style="min-height: 400px;">
                                     <div class="d-sm-flex flex-wrap">
-                                        <h4 class="card-title mb-4">Jumlah Data Menurut Gender</h4>
+                                        <h4 class="card-title mb-4">Grafik Jenis Kelamin</h4>
                                     </div>
                                     
-                                    <div id="gender_chart" class="apex-charts" dir="ltr"></div>  
+                                    <div style="flex; justify-content: center; align-items: center; flex-direction: column">
+                                        <div id="gender_chart" class="apex-charts" dir="ltr"></div>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body" style="min-height: 400px; display: flex; justify-content: center; align-items: center; flex-direction: column">
+                                    <div class="d-sm-flex flex-wrap">
+                                        <h4 class="card-title mb-4">Grafik Pekerjaan Orang Tua</h4>
+                                    </div>
+                                    
+                                    <div id="parent_job_chart" class="apex-charts" dir="ltr"></div>  
                                 </div>
                             </div>
                         </div>
@@ -318,11 +332,11 @@
                             breakpoint: 480,
                             options: {
                                 chart: {
-                                    width: 200
+                                    width: 270,
                                 },
                                 legend: {
                                     position: 'bottom'
-                                }
+                                },
                             }
                         }]
                     };
@@ -332,6 +346,71 @@
             });
         }
 
+        function ParentJobChart() {
+            fetch("/charts")
+                .then((res) => res.json())
+                .then((data) => {
+                    let one = data.parentJob[1].length;
+                    let two = data.parentJob[2].length;
+                    let three = data.parentJob[3].length;
+                    let four = data.parentJob[4].length;
+                    let five = data.parentJob[5].length;
+                    let six = data.parentJob[6].length;
+                    let seven = data.parentJob[7].length;
+                    let eight = data.parentJob[8].length;
+                    let nine = data.parentJob[9].length;
+                    let ten = data.parentJob[10].length;
+
+                    let citaArr = [one,two,three,four,five,six,seven,eight,nine,ten];
+
+                    let title = ["Tidak Bekerja","Buruh(Tani,Pabrik,Bangunan)","Dokter/Bidan/Perawat","Guru/Dosen","Pedagang","Wiraswasta","Pengacara/Hakim/Jaksa/Notaris","Petani/Peternak","PNS","Lainnya"];
+
+                    let colors = ["#34c38f","#556ee6","#f46a6a","#50a5f1","#f1b44c","#8E3200","#7858A6","#37E2D5","#F73D93","#82954B"];
+
+                    const options = {
+                        chart: {
+                            height: 320,
+                            width: 480,
+                            type: "pie",
+                        },
+                        series: citaArr,
+                        labels: title,
+                        colors: colors,
+                        legend: {
+                            show: true,
+                            position: "bottom",
+                            horizontalAlign: "center",
+                            verticalAlign: "middle",
+                            floating: false,
+                            fontSize: "14px",
+                            offsetX: 0,
+                        },
+                        responsive: [
+                            {
+                                breakpoint: 600,
+                                options: {
+                                    chart: {
+                                        height: 240,
+                                    },
+                                    legend: {
+                                        show: false,
+                                    },
+                                },
+                            },
+                        ],
+                    };
+
+                    const chart = new ApexCharts(
+                        document.querySelector("#parent_job_chart"),
+                        options
+                    );
+
+                    chart.render();
+                })
+                .catch((err) => console.log(err));
+        }
+
+        ParentJobChart()
         YearlyChart()
         GenderChart()
     </script>

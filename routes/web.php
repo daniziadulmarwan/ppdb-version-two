@@ -41,8 +41,10 @@ Route::get('/charts', function () {
 
   $yearly = NewStudent::select('jenjang', 'tahun_ppdb')->get();
   $gender = collect($datas)->groupBy('gender');
+  $parentJob = collect($datas)->groupBy('pekerjaan_ayah');
   return response()->json([
     'yearly' => $yearly,
     'gender' => $gender,
+    'parentJob' => $parentJob,
   ]);
 });
