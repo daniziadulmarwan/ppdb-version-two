@@ -33,8 +33,12 @@ Route::fallback(function () {
 
 // Chart Route
 Route::get('/charts', function () {
+  $datas = NewStudent::all();
+
   $yearly = NewStudent::select('jenjang', 'tahun_ppdb')->get();
+  $gender = collect($datas)->groupBy('gender');
   return response()->json([
     'yearly' => $yearly,
+    'gender' => $gender,
   ]);
 });

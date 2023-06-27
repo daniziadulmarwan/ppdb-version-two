@@ -107,6 +107,18 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-sm-flex flex-wrap">
+                                        <h4 class="card-title mb-4">Jumlah Data Menurut Gender</h4>
+                                    </div>
+                                    
+                                    <div id="gender_chart" class="apex-charts" dir="ltr"></div>  
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -121,7 +133,7 @@
 
     <script>
         function YearlyChart() {
-        fetch("/charts")
+            fetch("/charts")
             .then((res) => res.json())
             .then((data) => {
                 let ma2022 = data.yearly.filter(
@@ -286,8 +298,41 @@
             .catch((err) => console.log(err));
         }
 
-        window.onload = function() {
-            YearlyChart()
+        function GenderChart() {
+            fetch("/charts")
+                .then((res) => res.json())
+                .then((data) => {
+                    let man = data.gender[1].length;
+                    let woman = data.gender[2].length;
+
+                    let gender = [man, woman]
+                    let title = ["Laki-laki","Perempuan",];
+
+                    const options = {
+                        series: gender,
+                        labels: title,
+                        chart: {
+                            type: 'donut',
+                        },
+                        responsive: [{
+                            breakpoint: 480,
+                            options: {
+                                chart: {
+                                    width: 200
+                                },
+                                legend: {
+                                    position: 'bottom'
+                                }
+                            }
+                        }]
+                    };
+        
+                    const chart = new ApexCharts(document.querySelector("#gender_chart"), options);
+                    chart.render();
+            });
         }
+
+        YearlyChart()
+        GenderChart()
     </script>
 @endpush
