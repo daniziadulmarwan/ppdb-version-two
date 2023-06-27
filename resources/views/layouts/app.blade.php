@@ -38,7 +38,9 @@
                 <div class="nk-footer">
                     <div class="container-fluid">
                         <div class="nk-footer-wrap">
-                            <div class="nk-footer-copyright"> &copy; <script>document.write(new Date().getFullYear())</script> PPDB App V2 by <a href="https://daniziadulmarwan.github.io/" target="_blank" class="text-primary">Zeiteim Tech</a>
+                            <div class="nk-footer-copyright"> &copy; <script>document.write(new Date().getFullYear())</script> PPDB App V2 by <a href="https://daniziadulmarwan.github.io/" target="_blank" class="text-success">
+                                <em class="icon ni ni-terminal"></em>
+                                Zeiteim Tech</a>
                             </div>
                         </div>
                     </div>

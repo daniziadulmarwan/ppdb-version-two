@@ -45,7 +45,10 @@
                             <tbody>
                               @foreach ($data as $item)
                                 <tr>
-                                    <td>{{ $item->reg_number }}</td>
+                                    <td>
+                                      <span class="badge bg-outline-info">
+                                        {{ $item->reg_number }}</td>
+                                      </span></td>
                                     <td>{{ $item->fullname }}</td>
                                     <td>{{ $item->nisn }}</td>
                                     <td>{{ $item->jenjang === 1 ? 'Tsanawiyah' : 'Aliyah' }}</td>
@@ -67,7 +70,7 @@
                                     </td>
                                     <td>
                                       <a href="#" class="btn btn-icon btn-sm btn-warning rounded-circle"><em class="icon ni ni-edit-alt"></em></a>
-                                      <a href="#" class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash"></em></a>
+                                      <button class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash" onclick="destroyNewStudent({{ $item->id }})"></em></button>
                                       <a href="#" class="btn btn-icon btn-sm btn-secondary rounded-circle"><em class="icon ni ni-eye"></em></a>
                                       <a href="#" class="btn btn-icon btn-sm btn-info rounded-circle"><em class="icon ni ni-file-text"></em></a>
                                     </td>
@@ -91,4 +94,27 @@
 
 @push('script')
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
+  <script src="/assets/js/example-sweetalert.js?ver=3.1.1"></script>
+
+  <script>
+    function destroyNewStudent(id) {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You want to destroy this data!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: 'btn-success',
+        cancelButtonColor: 'btn-danger',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Your data has been deleted.',
+            icon: 'success'
+           });
+        }
+      });
+    }
+  </script>
 @endpush

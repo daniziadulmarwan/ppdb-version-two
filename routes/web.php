@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewStudentController;
+use App\Models\NewStudent;
 use Illuminate\Support\Facades\Route;
 
 // Guest
@@ -8,18 +11,30 @@ Route::view('/', 'pages.index');
 Route::view('/signin', 'pages.signin');
 
 // Auth
-Route::view('/admin/dashboard', 'admin.dashboard.index');
+Route::controller(DashboardController::class)->group(function () {
+  route::get('/admin/dashboard', 'index');
+});
 
 Route::controller(NewStudentController::class)->group(function () {
   route::get('/admin/student', 'index');
 });
 
+Route::controller(ContactController::class)->group(function () {
+  route::get('/admin/contact', 'index');
+});
+
 Route::view('/admin/document', 'admin.document.index');
-Route::view('/admin/contact', 'admin.contact.index');
-Route::view('/admin/chats', 'admin.chat.index');
 Route::view('/admin/setting', 'admin.setting.index');
 
 // Wrong Route
 Route::fallback(function () {
   return view('pages.404');
+});
+
+// Chart Route
+Route::get('/charts', function () {
+  $yearly = NewStudent::select('jenjang', 'tahun_ppdb')->get();
+  return response()->json([
+    'yearly' => $yearly,
+  ]);
 });

@@ -41,13 +41,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                              @foreach ($data as $item)
                                 <tr>
-                                    <td>PB2023-6MLE9UQ2</td>
-                                    <td>ANGGAR SIMBARDEWI</td>
-                                    <td>0116489552</td>
-                                    <td>anggar.simbardewi@gmail.com</td>
-                                    <td>Jl. Kertoleksono 93D, Lowokwaru, Malang</td>
+                                    <td>
+                                      <span class="badge bg-outline-warning">
+                                        {{ $item->reg_number }}</td>
+                                      </span>
+                                    <td>{{ $item->fullname }}</td>
+                                    <td>
+                                      <span class="badge bg-outline-info">
+                                        {{ Str::replace(' ', '', Str::replace('(+62)', '0', $item->wa_number)) }}
+                                      </span>
+                                    </td>
+                                    <td>
+                                      <span class="badge bg-outline-danger">
+                                        {{ $item->email }}</td>
+                                      </span>
+                                    <td>{{ $item->address }}</td>
                                 </tr>
+                              @endforeach
                             </tbody>
                         </table>
                         </div>
