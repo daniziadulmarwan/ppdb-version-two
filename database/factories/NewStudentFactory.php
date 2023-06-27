@@ -18,7 +18,8 @@ class NewStudentFactory extends Factory
             'jenis_pendaftaran' => mt_rand(1, 2),
 
             // from empty input javascript
-            'tahun_ppdb' => date('Y'),
+            // 'tahun_ppdb' => date('Y'),
+            'tahun_ppdb' => mt_rand(2022, 2028),
 
             // Data Pribadi
             'fullname' => fake()->name(),
