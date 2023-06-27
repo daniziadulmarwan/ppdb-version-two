@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\NewStudentController;
 use App\Models\NewStudent;
 use Illuminate\Support\Facades\Route;
@@ -19,11 +20,14 @@ Route::controller(NewStudentController::class)->group(function () {
   route::get('/admin/student', 'index');
 });
 
+Route::controller(DocumentController::class)->group(function () {
+  route::get('/admin/document', 'index');
+});
+
 Route::controller(ContactController::class)->group(function () {
   route::get('/admin/contact', 'index');
 });
 
-Route::view('/admin/document', 'admin.document.index');
 Route::view('/admin/setting', 'admin.setting.index');
 
 // Wrong Route

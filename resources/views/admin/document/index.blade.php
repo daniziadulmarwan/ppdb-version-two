@@ -41,21 +41,23 @@
                                 </tr>
                             </thead>
                             <tbody>
+                              @foreach ($data as $item)
                                 <tr>
                                     <td class="nk-tb-col tb-col-mb">
                                       <div class="user-avatar">
-                                        <img src="/assets/images/avatar/a-sm.jpg" alt="Avatar User">
+                                        <img src="/assets/images/user.png" alt="Avatar User">
                                       </div>
                                     </td>
-                                    <td class="nk-tb-col tb-col-mb">PB2023-6MLE9UQ2</td>
-                                    <td class="nk-tb-col tb-col-mb">ANGGAR SIMBARDEWI</td>
+                                    <td class="nk-tb-col tb-col-mb">{{ $item->reg_number }}</td>
+                                    <td class="nk-tb-col tb-col-mb">{{ $item->fullname }}</td>
                                     <td class="nk-tb-col tb-col-mb">
-                                      <a href="#" class="btn btn-round btn-primary"><em class="icon ni ni-download-cloud"></em><span>Download</span> </a>
+                                      <a href="/storage/public/{{ $item->kk }}" class="btn btn-round btn-primary" download><em class="icon ni ni-download-cloud"></em><span>Download</span> </a>
                                     </td>
                                     <td class="nk-tb-col tb-col-mb">
-                                      <a href="#" class="btn btn-round btn-success"><em class="icon ni ni-download-cloud"></em><span>Download</span> </a>
+                                      <a href="/storage/public/{{ $item->akte }}" class="btn btn-round btn-success" download><em class="icon ni ni-download-cloud"></em><span>Download</span> </a>
                                     </td>
                                 </tr>
+                              @endforeach
                             </tbody>
                         </table>
                         </div>
