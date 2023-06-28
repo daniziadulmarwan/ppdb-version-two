@@ -2,6 +2,7 @@
 
 @push('style')
   @livewireStyles
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 @endpush
 
 
@@ -93,7 +94,7 @@
   </div>
 
   @include('admin.student.create')
-  @include('admin.student.edit-modal')
+  @include('admin.student.edit')
 @endsection
 
 
@@ -101,6 +102,8 @@
   @livewireScripts
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
   <script src="/assets/js/example-sweetalert.js?ver=3.1.1"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
 
   <script>
     // Send Id When Click Edit Modal Button
@@ -129,5 +132,32 @@
         }
       });
     }
+
+    // Only Year Datepicker
+    $(function() {
+        $('.date-picker-year').datepicker({
+            changeYear: true,
+            showButtonPanel: true,
+            dateFormat: 'yy',
+            onClose: function(dateText, inst) { 
+                var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                $(this).datepicker('setDate', new Date(year, 1));
+            }
+        });
+
+        $(".date-picker-year").focus(function () {
+            $(".ui-datepicker-month").hide();
+            $(".ui-datepicker-calendar").hide();
+        });
+    });
+
+    // Normal Datepicker
+    $(function() {
+        $("#datepicker").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'yy/mm/dd',
+        });
+    });
   </script>
 @endpush
