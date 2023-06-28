@@ -38,8 +38,13 @@ Route::fallback(function () {
 // Chart Route
 Route::get('/charts', function () {
   $datas = NewStudent::all();
+  $mahad = NewStudent::where('is_pesantren', 1)->get();
 
-  $yearly = NewStudent::select('jenjang', 'tahun_ppdb')->get();
+  // $yearly = NewStudent::select('jenjang', 'tahun_ppdb')->get();
+  $yearly = collect($datas)->groupBy(['jenjang', function ($item) {
+    return $item['tahun_ppdb'];
+  }]);
+  $ponpes = collect($mahad)->groupBy('tahun_ppdb');
   $gender = collect($datas)->groupBy('gender');
   $parentJob = collect($datas)->groupBy('pekerjaan_ayah');
   $parentIncome = collect($datas)->groupBy('penghasilan_ayah');
@@ -49,5 +54,6 @@ Route::get('/charts', function () {
     'gender' => $gender,
     'parentJob' => $parentJob,
     'parentIncome' => $parentIncome,
+    'ponpes' => $ponpes,
   ]);
 });
