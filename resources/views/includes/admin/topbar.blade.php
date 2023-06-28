@@ -16,7 +16,7 @@
               <ul class="nk-quick-nav">
                 
                 <!-- Start Chats -->
-                <li class="dropdown chats-dropdown hide-mb-xs">
+                {{-- <li class="dropdown chats-dropdown hide-mb-xs">
                     <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
                         <div class="icon-status icon-status-na"><em class="icon ni ni-comments"></em></div>
                     </a>
@@ -149,12 +149,16 @@
                             <a href="html/apps-chats.html">View All</a>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Start Notification -->
                 <li class="dropdown notification-dropdown">
                     <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
-                        <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
+                        @if (false)
+                            <div style="border-radius: 50%; height: 20px;width: 20px; display: flex; justify-content: center; align-items: center"><em class="icon ni ni-bell"></em></div>
+                        @else
+                            <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
+                        @endif
                     </a>
                     <div class="dropdown-menu dropdown-menu-xl dropdown-menu-end">
                         <div class="dropdown-head">
