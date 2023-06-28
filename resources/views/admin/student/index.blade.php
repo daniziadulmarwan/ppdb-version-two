@@ -92,7 +92,7 @@
     </div>
   </div>
 
-  @include('admin.student.create-modal')
+  @include('admin.student.create')
   @include('admin.student.edit-modal')
 @endsection
 
