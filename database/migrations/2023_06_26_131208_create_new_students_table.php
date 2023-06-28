@@ -31,16 +31,16 @@ return new class extends Migration
             $table->date('born_date');
             $table->integer('agama');
             $table->integer('status_keluarga');
-            $table->string('jumlah_saudara')->nullable();
-            $table->string('anak_ke', 2)->nullable();
+            $table->integer('jumlah_saudara')->nullable()->default(0);
+            $table->integer('anak_ke', 2)->nullable()->default(0);
             $table->string('wa_number');
             $table->string('email')->nullable();
 
             // Alamat
             $table->string('address');
-            $table->char('rt', 3);
-            $table->char('rw', 3);
-            $table->char('kode_pos', 5);
+            $table->char('rt', 3)->nullable()->default(0);
+            $table->char('rw', 3)->nullable()->default(0);
+            $table->char('kode_pos', 5)->nullable();
             $table->string('province');
             $table->string('regency');
             $table->string('district');
@@ -59,6 +59,7 @@ return new class extends Migration
             // Data Sekolah Asal
             $table->string('asal_sekolah')->nullable();
             $table->string('seri_ijazah')->nullable();
+            $table->string('kip_number')->nullable();
 
             // Upload Berkas
             $table->string('kk');
