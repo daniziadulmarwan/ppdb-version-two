@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @push('style')
+  @livewireStyles
 @endpush
 
 
@@ -30,7 +31,7 @@
                   <div class="card">
                     <div class="nk-ecwg nk-ecwg6">
                         <div class="card-inner">
-                          <table class="datatable-init-export nowrap table" data-export-title="Export">
+                          <table class="datatable-init-export nowrap table" data-export-title="Export" id="table-new-student">
                             <thead>
                                 <tr>
                                     <th>No. Reg</th>
@@ -69,9 +70,12 @@
                                       @endif
                                     </td>
                                     <td>
-                                      <a href="#" class="btn btn-icon btn-sm btn-warning rounded-circle"><em class="icon ni ni-edit-alt"></em></a>
+                                      <button class="btn btn-icon btn-sm btn-warning rounded-circle edit-button" data-bs-toggle="modal" data-bs-target="#modalEditNewStudent" data-id="{{ $item->id }}"><em class="icon ni ni-edit-alt"></em></button>
+                                      
                                       <button class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash" onclick="destroyNewStudent({{ $item->id }})"></em></button>
+
                                       <a href="#" class="btn btn-icon btn-sm btn-secondary rounded-circle"><em class="icon ni ni-eye"></em></a>
+
                                       <a href="#" class="btn btn-icon btn-sm btn-info rounded-circle"><em class="icon ni ni-file-text"></em></a>
                                     </td>
                                 </tr>
@@ -89,14 +93,23 @@
   </div>
 
   @include('admin.student.create-modal')
+  @include('admin.student.edit-modal')
 @endsection
 
 
 @push('script')
+  @livewireScripts
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
   <script src="/assets/js/example-sweetalert.js?ver=3.1.1"></script>
 
   <script>
+    // Send Id When Click Edit Modal Button
+    $('#table-new-student').on('click', '.edit-button', function() {
+      let id = $(this).data('id');
+      Livewire.emit('getIdStudent', id);
+    });
+
+    // Delete Student Function
     function destroyNewStudent(id) {
       Swal.fire({
         title: 'Are you sure?',
