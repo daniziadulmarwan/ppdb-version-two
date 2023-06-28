@@ -25,7 +25,7 @@ class EditStudent extends Component
     {
         $data = NewStudent::find($id);
         $this->studentId = $id;
-        $this->fullname = "";
+        $this->fullname = $data->fullname;
     }
 
     public function save()
