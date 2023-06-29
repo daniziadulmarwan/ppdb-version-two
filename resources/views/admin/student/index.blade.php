@@ -2,7 +2,6 @@
 
 @push('style')
   @livewireStyles
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 @endpush
 
 
@@ -14,7 +13,7 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between">
                         <div class="nk-block-head-content">
-                          <button class="btn btn-round btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><em class="icon ni ni-plus-circle" ></em><span>Create New Student</span></button>
+                          <a href="/admin/student/create" class="btn btn-round btn-primary"><em class="icon ni ni-plus-circle"></em><span>Create New Student</span></a>
                         </div>
 
                         <div class="nk-block-head-content">
@@ -93,14 +92,12 @@
     </div>
   </div>
 
-  @include('admin.student.create')
   @include('admin.student.edit')
 @endsection
 
 
 @push('script')
   @livewireScripts
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
   <script src="/assets/js/example-sweetalert.js?ver=3.1.1"></script>
   <script src="/assets/custom/js/student.js"></script>

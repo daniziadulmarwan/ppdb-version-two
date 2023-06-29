@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class IndonesiaController extends Controller
 {
-   public function provinsi()
+   public function provinsi(Request $request)
    {
-        $data = Province::where('name', 'LIKE', '%'. request('keyword') . '%')->get();
+        $data = Province::where('name', 'LIKE', '%'. $request->keyword . '%')->paginate(20);
         return response()->json($data);
    }
 }

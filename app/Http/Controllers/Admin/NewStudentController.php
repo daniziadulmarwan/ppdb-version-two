@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\NewStudent;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 class NewStudentController extends Controller
@@ -16,7 +17,8 @@ class NewStudentController extends Controller
 
     public function create()
     {
-        //
+        $data = Province::all();
+        return view('admin.student.create', compact('data'));
     }
 
     public function store(Request $request)

@@ -19,6 +19,7 @@ Route::controller(DashboardController::class)->group(function () {
 
 Route::controller(NewStudentController::class)->group(function () {
   route::get('/admin/student', 'index');
+  route::get('/admin/student/create', 'create');
 });
 
 Route::controller(DocumentController::class)->group(function () {
