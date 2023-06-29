@@ -539,15 +539,6 @@
                               </div>
                             </div>
                         
-                            <div class="form-group">
-                              <label class="form-label">Select2 Default</label>
-                              <div class="form-control-wrap">
-                                  <select class="form-select js-select2" data-search="on">
-                                    <option value=""></option>
-                                  </select>
-                              </div>
-                          </div>
-                        
                             <!-- Hidden Year Input -->
                             <input type="hidden" id="tahun" class="tahun" name="tahun_ppdb" value="{{ date('Y') }}">
                         
@@ -571,6 +562,5 @@
 @push('script')
   @livewireScripts
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-  <script src="/assets/js/example-sweetalert.js?ver=3.1.1"></script>
   <script src="/assets/custom/js/student.js"></script>
 @endpush
