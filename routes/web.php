@@ -59,8 +59,3 @@ Route::get('/charts', function () {
     'ponpes' => $ponpes,
   ]);
 });
-
-// Indonesia Regency
-Route::controller(IndonesiaController::class)->group(function() {
-  route::get('/select-province', 'provinsi')->name('provinsi');
-});
