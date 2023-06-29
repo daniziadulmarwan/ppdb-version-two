@@ -351,8 +351,8 @@
                                       <div class="form-group">
                                         <div class="form-control-wrap ">
                                             <div class="form-control-select">
-                                                <select class="form-control">
-                                                    <option hidden>Kabupaten/Kota</option>
+                                                <select class="form-control" id="kabupaten">
+                                                    <option>Pilih Kabupaten/Kota</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -366,8 +366,8 @@
                                       <div class="form-group">
                                         <div class="form-control-wrap ">
                                             <div class="form-control-select">
-                                                <select class="form-control">
-                                                    <option hidden>Kecamatan</option>
+                                                <select class="form-control" id="kecamatan">
+                                                    <option>Pilih Kecamatan</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -381,8 +381,8 @@
                                       <div class="form-group">
                                         <div class="form-control-wrap ">
                                             <div class="form-control-select">
-                                                <select class="form-control">
-                                                    <option hidden>Desa/Kelurahan</option>
+                                                <select class="form-control" id="kelurahan">
+                                                    <option>Pilih Desa/Kelurahan</option>
                                                 </select>
                                             </div>
                                         </div>

@@ -1,6 +1,18 @@
 $(document).ready(function () {
+    // CSRF Setup
+    $(function () {
+        $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"').attr("content"),
+            },
+        });
+    });
+
     // Select2
     $("#propinsi").select2();
+    $("#kabupaten").select2();
+    $("#kecamatan").select2();
+    $("#kelurahan").select2();
 
     // Hide Jenis Pendaftaran Extension Input
     $(function () {
@@ -64,6 +76,132 @@ $(document).ready(function () {
     $("#table-new-student").on("click", ".edit-button", function () {
         let id = $(this).data("id");
         Livewire.emit("getIdStudent", id);
+    });
+
+    function getRegency(id) {
+        $.ajax({
+            type: "post",
+            url: "/kabupaten",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kabupaten").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getRegencyById(id) {
+        $.ajax({
+            type: "post",
+            url: "/kabupaten/byId",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kabupaten").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getDistrict(id) {
+        $.ajax({
+            type: "post",
+            url: "/kecamatan",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kecamatan").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getDistrictById(id) {
+        $.ajax({
+            type: "post",
+            url: "/kecamatan/byId",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kecamatan").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getVillage(id) {
+        $.ajax({
+            type: "post",
+            url: "/kelurahan",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kelurahan").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getVillageById(id) {
+        $.ajax({
+            type: "post",
+            url: "/kelurahan/byId",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kelurahan").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    // Indoregion Dropdown
+    // const id = $("#propinsi").val();
+    // if (id) {
+    //     getRegency(id);
+    // }
+
+    // const regencyId = $("#kabupaten").val();
+    // if (regencyId) {
+    //     getRegencyById(regencyId);
+    // }
+
+    // const districtId = $("#kecamatan").val();
+    // if (districtId) {
+    //     getDistrictById(districtId);
+    // }
+
+    // const villageId = $("#kelurahan").val();
+    // if (villageId) {
+    //     getVillageById(villageId);
+    // }
+
+    $("#propinsi").on("change", function () {
+        const id = $("#propinsi").val();
+        getRegency(id);
+    });
+
+    $("#kabupaten").on("change", function () {
+        const id = $("#kabupaten").val();
+        getDistrict(id);
+    });
+
+    $("#kecamatan").on("change", function () {
+        const id = $("#kecamatan").val();
+        getVillage(id);
     });
 });
 

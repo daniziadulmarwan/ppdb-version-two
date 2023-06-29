@@ -20,6 +20,7 @@ Route::controller(DashboardController::class)->group(function () {
 Route::controller(NewStudentController::class)->group(function () {
   route::get('/admin/student', 'index');
   route::get('/admin/student/create', 'create');
+
 });
 
 Route::controller(DocumentController::class)->group(function () {
@@ -58,4 +59,14 @@ Route::get('/charts', function () {
     'parentIncome' => $parentIncome,
     'ponpes' => $ponpes,
   ]);
+});
+
+// Indonesia Route
+Route::controller(IndonesiaController::class)->group(function() {
+  route::post('/kabupaten', 'GetRegency');
+  route::post('/kecamatan', 'GetDistrict');
+  route::post('/kelurahan', 'GetVillage');
+  route::post('/kabupaten/byId', 'GetRegencyById');
+  route::post('/kecamatan/byId', 'GetDistrictById');
+  route::post('/kelurahan/byId', 'GetVillageById');
 });

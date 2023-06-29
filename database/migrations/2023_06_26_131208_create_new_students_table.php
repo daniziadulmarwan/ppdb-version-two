@@ -32,7 +32,7 @@ return new class extends Migration
             $table->integer('agama');
             $table->integer('status_keluarga');
             $table->integer('jumlah_saudara')->nullable()->default(0);
-            $table->integer('anak_ke', 2)->nullable()->default(0);
+            $table->integer('anak_ke')->nullable();
             $table->string('wa_number');
             $table->string('email')->nullable();
 

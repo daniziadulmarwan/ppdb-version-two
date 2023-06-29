@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
             'password_text' => 'password'
         ]);
 
-        NewStudent::factory(200)->create();
+        NewStudent::factory(50)->create();
     }
 }
