@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\NewStudentController;
+use App\Http\Controllers\IndonesiaController;
 use App\Models\NewStudent;
 use Illuminate\Support\Facades\Route;
 
@@ -56,4 +57,9 @@ Route::get('/charts', function () {
     'parentIncome' => $parentIncome,
     'ponpes' => $ponpes,
   ]);
+});
+
+// Indonesia Regency
+Route::controller(IndonesiaController::class)->group(function() {
+  route::get('/select-province', 'provinsi')->name('provinsi');
 });

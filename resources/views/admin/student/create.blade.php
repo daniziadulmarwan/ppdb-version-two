@@ -299,13 +299,10 @@
           <div class="form-group">
             <div class="form-control-wrap">
               <div class="form-group">
-                <div class="form-control-wrap ">
-                    <div class="form-control-select">
-                        <select class="form-control">
-                            <option hidden>Propinsi</option>
-                        </select>
-                    </div>
-                </div>
+                <div class="form-control-wrap">
+                  <select class="form-select" id="propinsi" data-search="on">
+                  </select>
+              </div>
               </div>
             </div>
           </div>
@@ -503,6 +500,15 @@
         </div>
       </div>
     </div>
+
+    <div class="form-group">
+      <label class="form-label">Select2 Default</label>
+      <div class="form-control-wrap">
+          <select class="form-select js-select2" data-search="on">
+            <option value=""></option>
+          </select>
+      </div>
+  </div>
 
     <!-- Hidden Year Input -->
     <input type="hidden" id="tahun" class="tahun" name="tahun_ppdb" value="{{ date('Y') }}">

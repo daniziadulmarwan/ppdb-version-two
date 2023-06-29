@@ -14,7 +14,7 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between">
                         <div class="nk-block-head-content">
-                          <button class="btn btn-round btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreateNewStudent"><em class="icon ni ni-plus-circle" ></em><span>Create New Student</span></button>
+                          <button class="btn btn-round btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><em class="icon ni ni-plus-circle" ></em><span>Create New Student</span></button>
                         </div>
 
                         <div class="nk-block-head-content">

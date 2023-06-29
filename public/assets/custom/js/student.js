@@ -1,4 +1,25 @@
 $(document).ready(function () {
+    $("#propinsi").select2({
+        width: "100%",
+        dropdownParent: $("#exampleModal"),
+        placeholder: "Pilih Propinsi",
+        tags: true,
+        ajax: {
+            url: "/select-province",
+            processResults: function ({ data }) {
+                return {
+                    results: $.map(data, function (item) {
+                        console.log(item);
+                        return {
+                            id: item.id,
+                            text: item.name,
+                        };
+                    }),
+                };
+            },
+        },
+    });
+
     // Hide Jenis Pendaftaran Extension Input
     $(function () {
         let value = $("#jenisPendaftaran").val();
