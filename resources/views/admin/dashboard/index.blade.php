@@ -161,5 +161,5 @@
 
 @push('script')
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="/assets/custom/chart.js"></script>
+    <script src="/assets/custom/js/chart.js"></script>
 @endpush
