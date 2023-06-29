@@ -20,6 +20,8 @@
     <!-- Addon Css -->
     @stack('style')
 
+    @vite('resources/js/app.js')
+
 </head>
 
 <body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme dark-mode">

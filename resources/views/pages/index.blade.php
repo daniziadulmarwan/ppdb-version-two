@@ -8,6 +8,6 @@
   @vite('resources/css/app.css')
 </head>
 <body>
-  <h1>Welcome</h1>
+  <h1>Welcome Hasan Zavair Marwan</h1>
 </body>
 </html>
