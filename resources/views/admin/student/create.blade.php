@@ -46,7 +46,7 @@
             <div class="form-group">
               <div class="form-control-wrap ">
                   <div class="form-control-select">
-                      <select class="form-control">
+                      <select class="form-control" id="jenisPendaftaran">
                           <option hidden>Jenis Pendaftaran</option>
                           <option value="1">Siswa Baru</option>
                           <option value="2">Pindahan</option>
@@ -54,7 +54,24 @@
                   </div>
               </div>
             </div>
+
+            <div class="form-group d-none" id="pilihanKelas">
+              <div class="form-control-wrap ">
+                  <div class="form-control-select">
+                      <select class="form-control">
+                          <option hidden>Pindah Ke Kelas</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                      </select>
+                  </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
