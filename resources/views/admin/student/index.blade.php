@@ -13,7 +13,7 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between">
                         <div class="nk-block-head-content">
-                          <a href="/admin/student/create" class="btn btn-round btn-primary"><em class="icon ni ni-plus-circle"></em><span>Create New Student</span></a>
+                         
                         </div>
 
                         <div class="nk-block-head-content">
@@ -31,7 +31,15 @@
                   <div class="card">
                     <div class="nk-ecwg nk-ecwg6">
                         <div class="card-inner">
-                          <table class="datatable-init-export nowrap table" data-export-title="Export" id="table-new-student">
+
+                          <!-- Export Buttons Start -->
+                          <div class="mb-3">
+                            <a href="/admin/student/create" class="btn btn-primary"><em class="icon ni ni-plus-circle"></em><span>Create New Student</span></a>
+                            <a href="#" class="btn btn-success"><em class="icon ni ni-file-xls"></em><span>Export Excel</span></a>
+                          </div>
+                          <!-- Export Buttons End -->
+
+                          <table class="datatable-init nowrap table" data-export-title="Export" id="table-new-student">
                             <thead>
                                 <tr>
                                     <th>No. Reg</th>
@@ -70,7 +78,7 @@
                                       @endif
                                     </td>
                                     <td>
-                                      <button class="btn btn-icon btn-sm btn-warning rounded-circle edit-button" data-bs-toggle="modal" data-bs-target="#modalEditNewStudent" data-id="{{ $item->id }}"><em class="icon ni ni-edit-alt"></em></button>
+                                      <a href="/admin/student/{{ $item->id }}/edit" class="btn btn-icon btn-sm btn-warning rounded-circle edit-button"><em class="icon ni ni-edit-alt"></em></a>
                                       
                                       <button class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash" onclick="destroyNewStudent({{ $item->id }})"></em></button>
 
@@ -81,7 +89,8 @@
                                 </tr>
                               @endforeach
                             </tbody>
-                        </table>
+                          </table>
+
                         </div>
                     </div>
                   </div>
@@ -91,8 +100,6 @@
         </div>
     </div>
   </div>
-
-  @include('admin.student.edit')
 @endsection
 
 

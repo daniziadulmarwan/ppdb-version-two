@@ -33,7 +33,9 @@ class NewStudentController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $data = NewStudent::find($id);
+        $province = Province::all();
+        return view('admin.student.edit', compact('data', 'province'));
     }
 
     public function update(Request $request, string $id)
