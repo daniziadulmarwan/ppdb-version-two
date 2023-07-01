@@ -43,10 +43,7 @@
                             <tbody>
                               @foreach ($data as $item)
                                 <tr>
-                                    <td>
-                                      <span class="badge bg-outline-warning">
-                                        {{ $item->reg_number }}</td>
-                                      </span>
+                                    <td>{{ $item->reg_number }}</td>
                                     <td>{{ $item->fullname }}</td>
                                     <td>
                                       <span class="badge bg-outline-info">

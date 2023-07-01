@@ -46,7 +46,7 @@
                                     <th>Nama</th>
                                     <th>NISN</th>
                                     <th>Jenjang</th>
-                                    <th>Sekolah Asal</th>
+                                    <th>Pesantren</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -54,14 +54,21 @@
                             <tbody>
                               @foreach ($data as $item)
                                 <tr>
-                                    <td>
-                                      <span class="badge bg-outline-info">
-                                        {{ $item->reg_number }}</td>
-                                      </span></td>
+                                    <td>{{ $item->reg_number }}</td>
                                     <td>{{ $item->fullname }}</td>
                                     <td>{{ $item->nisn }}</td>
                                     <td>{{ $item->jenjang === 1 ? 'Tsanawiyah' : 'Aliyah' }}</td>
-                                    <td>{{ $item->asal_sekolah ?? '-' }}</td>
+                                    <td>
+                                        @if ($item->is_pesantren === 1)
+                                          <span class="badge badge-dim rounded-pill bg-success">
+                                            Yes
+                                          </span> 
+                                        @else
+                                          <span class="badge badge-dim rounded-pill bg-danger">
+                                            No
+                                          </span>
+                                        @endif
+                                    </td>
                                     <td>
                                       @if ($item->status === 'pending')
                                         <span class="badge badge-dim rounded-pill bg-warning">
