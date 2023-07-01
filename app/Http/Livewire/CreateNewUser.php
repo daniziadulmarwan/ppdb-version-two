@@ -30,10 +30,12 @@ class CreateNewUser extends Component
     {
         $this->validate();
 
+        dd($this->password);
+
         User::create([
             'name' => $this->name,
             'username' => $this->username,
-            'password_text' => $this->confirm_password,
+            'password_text' => $this->password,
             'password' => bcrypt($this->password),
             'role' => $this->role,
         ]);

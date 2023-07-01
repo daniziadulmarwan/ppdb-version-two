@@ -127,8 +127,8 @@ function GenderChart() {
     fetch("/charts")
         .then((res) => res.json())
         .then((data) => {
-            let man = data.gender[1].length;
-            let woman = data.gender[2].length;
+            let man = data.gender[1]?.length || 0;
+            let woman = data.gender[2]?.length || 0;
 
             let gender = [man, woman];
             let title = ["Laki-laki", "Perempuan"];
@@ -171,16 +171,16 @@ function ParentJobChart() {
     fetch("/charts")
         .then((res) => res.json())
         .then((data) => {
-            let one = data.parentJob[1].length;
-            let two = data.parentJob[2].length;
-            let three = data.parentJob[3].length;
-            let four = data.parentJob[4].length;
-            let five = data.parentJob[5].length;
-            let six = data.parentJob[6].length;
-            let seven = data.parentJob[7].length;
-            let eight = data.parentJob[8].length;
-            let nine = data.parentJob[9].length;
-            let ten = data.parentJob[10].length;
+            let one = data.parentJob[1]?.length || 0;
+            let two = data.parentJob[2]?.length || 0;
+            let three = data.parentJob[3]?.length || 0;
+            let four = data.parentJob[4]?.length || 0;
+            let five = data.parentJob[5]?.length || 0;
+            let six = data.parentJob[6]?.length || 0;
+            let seven = data.parentJob[7]?.length || 0;
+            let eight = data.parentJob[8]?.length || 0;
+            let nine = data.parentJob[9]?.length || 0;
+            let ten = data.parentJob[10]?.length || 0;
 
             let citaArr = [
                 one,
@@ -269,13 +269,13 @@ function ParentIncomeChart() {
     fetch("/charts")
         .then((res) => res.json())
         .then((data) => {
-            let one = data.parentIncome[1].length;
-            let two = data.parentIncome[2].length;
-            let three = data.parentIncome[3].length;
-            let four = data.parentIncome[4].length;
-            let five = data.parentIncome[5].length;
-            let six = data.parentIncome[6].length;
-            let seven = data.parentIncome[7].length;
+            let one = data.parentIncome[1]?.length || 0;
+            let two = data.parentIncome[2]?.length || 0;
+            let three = data.parentIncome[3]?.length || 0;
+            let four = data.parentIncome[4]?.length || 0;
+            let five = data.parentIncome[5]?.length || 0;
+            let six = data.parentIncome[6]?.length || 0;
+            let seven = data.parentIncome[7]?.length || 0;
 
             let datas = [one, two, three, four, five, six, seven];
 
