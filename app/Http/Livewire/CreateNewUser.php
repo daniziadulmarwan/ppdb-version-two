@@ -30,8 +30,6 @@ class CreateNewUser extends Component
     {
         $this->validate();
 
-        dd($this->password);
-
         User::create([
             'name' => $this->name,
             'username' => $this->username,

@@ -13,10 +13,10 @@ return new class extends Migration
 
             // Data Pilihan Sekolah
             $table->string('reg_number');
-            $table->integer('jenjang');
-            $table->boolean('is_pesantren');
+            $table->enum('jenjang', [1, 2]);
+            $table->enum('is_pesantren', [1, 2]);
             $table->year('tahun_lulus');
-            $table->integer('jenis_pendaftaran');
+            $table->enum('jenis_pendaftaran', [1, 2]);
             $table->string('pilihan_kelas')->nullable();
 
             //from empty input javascript

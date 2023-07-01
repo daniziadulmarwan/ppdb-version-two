@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Dr. Hasan Zavair Marwan, M.A.',
             'username' => '2233445566',
             'password' => bcrypt('password'),
-            'password_text' => 'password'
+            'password_text' => 'password',
+            'role' => 'admin'
         ]);
 
         NewStudent::factory(50)->create();
