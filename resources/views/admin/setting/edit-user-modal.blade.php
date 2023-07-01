@@ -1,4 +1,4 @@
-<div class="modal fade modalEditUser" id="modalEditUser">
+<div class="modal fade" id="modalEditUser">
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-body">

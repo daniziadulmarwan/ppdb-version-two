@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\NewStudentController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\IndonesiaController;
 use App\Models\NewStudent;
 use Illuminate\Support\Facades\Route;
@@ -31,9 +32,11 @@ Route::controller(ContactController::class)->group(function () {
   route::get('/admin/contact', 'index');
 });
 
-Route::view('/admin/setting', 'admin.setting.index');
+Route::controller(SettingController::class)->group(function () {
+  route::get('/admin/setting', 'index');
+});
 
-// Wrong Route
+// 404 Route
 Route::fallback(function () {
   return view('pages.404');
 });
@@ -62,7 +65,7 @@ Route::get('/charts', function () {
 });
 
 // Indonesia Route
-Route::controller(IndonesiaController::class)->group(function() {
+Route::controller(IndonesiaController::class)->group(function () {
   route::post('/kabupaten', 'GetRegency');
   route::post('/kecamatan', 'GetDistrict');
   route::post('/kelurahan', 'GetVillage');

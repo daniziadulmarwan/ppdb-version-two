@@ -84,6 +84,7 @@
 
   @include('admin.setting.create-user-modal')
   @include('admin.setting.edit-user-modal')
+
 @endsection
 
 @push('script')
@@ -130,7 +131,5 @@
             timer: 1500
         });
     });
-
-   
   </script>
 @endpush
