@@ -47,7 +47,8 @@
                                     <th>NISN</th>
                                     <th>Jenjang</th>
                                     <th>Pesantren</th>
-                                    <th>Status</th>
+                                    <th>Tanggal Daftar</th>
+                                    {{-- <th>Status</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -70,6 +71,9 @@
                                         @endif
                                     </td>
                                     <td>
+                                      11 Juli 2023
+                                    </td>
+                                    {{-- <td>
                                       @if ($item->status === 'pending')
                                         <span class="badge badge-dim rounded-pill bg-warning">
                                           {{ $item->status }}
@@ -83,7 +87,7 @@
                                           {{ $item->status }}
                                         </span>
                                       @endif
-                                    </td>
+                                    </td> --}}
                                     <td>
                                       <a href="/admin/student/{{ $item->id }}/edit" class="btn btn-icon btn-sm btn-warning rounded-circle edit-button"><em class="icon ni ni-edit-alt"></em></a>
                                       

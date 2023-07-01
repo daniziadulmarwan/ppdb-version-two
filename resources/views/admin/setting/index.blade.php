@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @push('style')
+    @livewireStyles
   <link rel="stylesheet" href="/assets/power-switch.css">
-  @livewireStyles
 @endpush
 
 @section('content')
@@ -82,10 +82,52 @@
     </div>
   </div>
 
-  @include('admin.setting.create-user')
+  @include('admin.setting.create-user-modal')
 @endsection
 
 @push('script')
-  <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
   @livewireScripts
+  <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
+
+  <script>
+    Livewire.on('createNewUser', (msg) => {
+        $('#modalCreateNewUser').modal('hide');
+        Swal.fire({
+            icon: 'success',
+            title: 'Selamat!',
+            text: msg,
+            showConfirmButton: false,
+            timer: 1500
+        });
+    });
+
+    function destroyUser(id) {
+        console.log(id)
+        Swal.fire({
+        title: "Are you sure?",
+        text: "You want to destroy this data!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "btn-success",
+        cancelButtonColor: "btn-danger",
+        confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.emit('destroyUserData', id);
+            }
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
+    Livewire.on('destroyDataUser', (msg) => {
+        Swal.fire({
+            icon: 'success',
+            title: 'Selamat!',
+            text: 'Success delete data',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    });
+  </script>
 @endpush
