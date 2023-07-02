@@ -335,8 +335,13 @@
                                   <!-- Address -->
                                   <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <textarea class="form-control no-resize" id="default-textarea" placeholder="Alamat sesuai kartu keluarga | contoh: Dsn. Sukamukti/Jl.Pahlawan No.123"></textarea>
+                                        <textarea class="form-control no-resize @error('address') is-invalid @enderror" id="default-textarea" placeholder="Alamat sesuai kartu keluarga | contoh: Dsn. Sukamukti/Jl.Pahlawan No.123" name="address">{{ old('address', $data->address) }}</textarea>
                                     </div>
+                                    @error('address')
+                                      <div class="invalid-feedback">
+                                        <i>{{ $message }}</i>
+                                      </div>
+                                    @enderror
                                   </div>
                         
                                   <!-- RT and RW -->
@@ -344,14 +349,24 @@
                                     <div class="col-md-6 mb-3">
                                       <div class="form-group">
                                         <div class="form-control-wrap">
-                                          <input type="number" class="form-control" placeholder="RT">
+                                          <input type="number" class="form-control @error('rt') is-invalid @enderror" placeholder="RT" value="{{ old('rt', $data->rt) }}" name="rt">
+                                          @error('rt')
+                                            <div class="invalid-feedback">
+                                              <i>{{ $message }}</i>
+                                            </div>
+                                          @enderror
                                         </div>
                                       </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                       <div class="form-group">
                                         <div class="form-control-wrap">
-                                          <input type="number" class="form-control" placeholder="RW">
+                                          <input type="number" class="form-control @error('rw') is-invalid @enderror" placeholder="RW" value="{{ old('rw', $data->rw) }}" name="rw">
+                                          @error('rw')
+                                            <div class="invalid-feedback">
+                                              <i>{{ $message }}</i>
+                                            </div>
+                                          @enderror
                                         </div>
                                       </div>
                                     </div>
@@ -360,7 +375,12 @@
                                   <!-- Postal Code -->
                                   <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="number" class="form-control" placeholder="Kode Pos">
+                                        <input type="number" class="form-control @error('kode_pos') is-invalid @enderror" placeholder="Kode Pos" value="{{ old('kode_pos', $data->kode_pos) }}" name="kode_pos">
+                                        @error('kode_pos')
+                                          <div class="invalid-feedback">
+                                            <i>{{ $message }}</i>
+                                          </div>
+                                        @enderror
                                     </div>
                                   </div>
                         
@@ -371,11 +391,9 @@
                                         <div class="form-control-wrap">
                                           <select class="form-select" id="propinsi">
                                             <option hidden>Pilih Propinsi</option>
-                                            {{-- @foreach ($province as $item)
-                                              <option value="{{ $item->id }}" @if ($data->province)
-                                                  
-                                              @endif>{{ $item->name }}</option>
-                                            @endforeach --}}
+                                            @foreach ($province as $item)
+                                              <option value="{{ $item->id }}" @if ($data->province == $item->id) selected @endif>{{ $item->name }}</option>
+                                            @endforeach
                                           </select>
                                       </div>
                                       </div>
@@ -600,4 +618,141 @@
   @livewireScripts
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <script src="/assets/custom/js/student.js"></script>
+
+  <script>
+    $(function () {
+        $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"').attr("content"),
+            },
+        });
+    });
+
+    function getRegency(id) {
+        $.ajax({
+            type: "post",
+            url: "/kabupaten",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kabupaten").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getRegencyById(id) {
+        $.ajax({
+            type: "post",
+            url: "/kabupaten/byId",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kabupaten").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getDistrict(id) {
+        $.ajax({
+            type: "post",
+            url: "/kecamatan",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kecamatan").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getDistrictById(id) {
+        $.ajax({
+            type: "post",
+            url: "/kecamatan/byId",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kecamatan").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getVillage(id) {
+        $.ajax({
+            type: "post",
+            url: "/kelurahan",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kelurahan").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    function getVillageById(id) {
+        $.ajax({
+            type: "post",
+            url: "/kelurahan/byId",
+            data: { id: id },
+            cache: false,
+            success: function (data) {
+                $("#kelurahan").html(data);
+            },
+            error: function (error) {
+                console.log("error", error);
+            },
+        });
+    }
+
+    $(function() {
+      const id = $('#propinsi').val();
+      if(id) {
+          getRegency(id);
+      }
+
+      const regencyId = $('#kabupaten').val();
+      if(regencyId) {
+          getRegencyById(regencyId);
+      }
+
+      const districtId = $('#kecamatan').val();
+      if(districtId) {
+          getDistrictById(districtId);
+      }
+
+      const villageId = $('#kelurahan').val();
+      if(villageId) {
+          getVillageById(villageId);
+      }
+
+      $("#propinsi").on("change", function () {
+        const id = $("#propinsi").val();
+        getRegency(id);
+      });
+
+      $("#kabupaten").on("change", function () {
+          const id = $("#kabupaten").val();
+          getDistrict(id);
+      });
+
+      $("#kecamatan").on("change", function () {
+          const id = $("#kecamatan").val();
+          getVillage(id);
+      });
+    })
+  </script>
 @endpush

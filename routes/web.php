@@ -51,9 +51,14 @@ Route::get('/charts', function () {
     return $item['tahun_ppdb'];
   }]);
   $ponpes = collect($mahad)->groupBy('tahun_ppdb');
-  $gender = collect($datas)->groupBy('gender');
+  // $gender = collect($datas)->groupBy('gender');
   $parentJob = collect($datas)->groupBy('pekerjaan_ayah');
   $parentIncome = collect($datas)->groupBy('penghasilan_ayah');
+
+  $gender = collect($datas)->groupBy(['gender', function ($item) {
+    return $item['tahun_ppdb'];
+  }]);
+
 
   return response()->json([
     'yearly' => $yearly,

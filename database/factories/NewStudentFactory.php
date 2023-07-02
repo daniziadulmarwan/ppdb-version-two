@@ -19,7 +19,7 @@ class NewStudentFactory extends Factory
 
             // from empty input javascript
             // 'tahun_ppdb' => date('Y'),
-            'tahun_ppdb' => mt_rand(2022, 2023),
+            'tahun_ppdb' => mt_rand(2022, 2029),
 
             // Data Pribadi
             'fullname' => fake()->name(),
@@ -40,7 +40,7 @@ class NewStudentFactory extends Factory
             'kode_pos' => mt_rand(12345, 67890),
             'rt' => mt_rand(01, 06),
             'rw' => mt_rand(01, 06),
-            'province' => fake()->city(),
+            'province' => mt_rand(11, 94),
             'regency' => fake()->city(),
             'district' => fake()->city(),
             'village' => fake()->city(),

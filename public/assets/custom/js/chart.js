@@ -123,50 +123,6 @@ function YearlyChart() {
         .catch((err) => console.log(err));
 }
 
-function GenderChart() {
-    fetch("/charts")
-        .then((res) => res.json())
-        .then((data) => {
-            let man = data.gender[1]?.length || 0;
-            let woman = data.gender[2]?.length || 0;
-
-            let gender = [man, woman];
-            let title = ["Laki-laki", "Perempuan"];
-
-            const options = {
-                series: gender,
-                labels: title,
-                chart: {
-                    type: "donut",
-                    height: 320,
-                    width: 480,
-                },
-                legend: {
-                    show: false,
-                },
-                responsive: [
-                    {
-                        breakpoint: 480,
-                        options: {
-                            chart: {
-                                width: 270,
-                            },
-                            legend: {
-                                position: "bottom",
-                            },
-                        },
-                    },
-                ],
-            };
-
-            const chart = new ApexCharts(
-                document.querySelector("#gender_chart"),
-                options
-            );
-            chart.render();
-        });
-}
-
 function ParentJobChart() {
     fetch("/charts")
         .then((res) => res.json())
@@ -311,6 +267,78 @@ function ParentIncomeChart() {
 
             const chart = new ApexCharts(
                 document.querySelector("#parent_income_chart"),
+                options
+            );
+            chart.render();
+        });
+}
+
+function GenderChart() {
+    fetch("/charts")
+        .then((res) => res.json())
+        .then((data) => {
+            let categorie = new Set();
+            let serie = [];
+
+            let man = [];
+            let woman = [];
+
+            for (const key in data.gender[1]) {
+                if (Object.hasOwnProperty.call(data.gender[1], key)) {
+                    const element = data.gender[1][key];
+                    man.push(element.length);
+                }
+                categorie.add(key);
+            }
+
+            for (const key in data.gender[2]) {
+                if (Object.hasOwnProperty.call(data.gender[2], key)) {
+                    const element = data.gender[2][key];
+                    woman.push(element.length);
+                }
+                categorie.add(key);
+            }
+
+            categorie = Array.from(categorie);
+            serie.push({ name: "Laki-laki", data: man });
+            serie.push({ name: "Perempuan", data: woman });
+
+            const options = {
+                series: serie,
+                chart: {
+                    type: "bar",
+                    height: 350,
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                colors: ["#34c38f", "#F73D93"],
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: "55%",
+                        endingShape: "rounded",
+                    },
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                stroke: {
+                    show: true,
+                    width: 2,
+                    colors: ["transparent"],
+                },
+                xaxis: {
+                    categories: categorie,
+                },
+
+                fill: {
+                    opacity: 1,
+                },
+            };
+
+            const chart = new ApexCharts(
+                document.querySelector("#gender_chart"),
                 options
             );
             chart.render();

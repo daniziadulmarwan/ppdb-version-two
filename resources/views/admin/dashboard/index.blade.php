@@ -108,7 +108,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body" style="min-height: 440px;">
                                     <div class="d-sm-flex flex-wrap">
