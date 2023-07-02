@@ -58,9 +58,9 @@
                                     <td>{{ $item->reg_number }}</td>
                                     <td>{{ $item->fullname }}</td>
                                     <td>{{ $item->nisn }}</td>
-                                    <td>{{ $item->jenjang === 1 ? 'Tsanawiyah' : 'Aliyah' }}</td>
+                                    <td>{{ $item->jenjang == 1 ? 'Tsanawiyah' : 'Aliyah' }}</td>
                                     <td>
-                                        @if ($item->is_pesantren === 1)
+                                        @if ($item->is_pesantren == 1)
                                           <span class="badge badge-dim rounded-pill bg-success">
                                             Yes
                                           </span> 
@@ -71,23 +71,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                      11 Juli 2023
+                                      {{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y'); }}
                                     </td>
-                                    {{-- <td>
-                                      @if ($item->status === 'pending')
-                                        <span class="badge badge-dim rounded-pill bg-warning">
-                                          {{ $item->status }}
-                                        </span> 
-                                      @elseif($item->status === 'accept')
-                                        <span class="badge badge-dim rounded-pill bg-success">
-                                          {{ $item->status }}
-                                        </span>
-                                      @else
-                                        <span class="badge badge-dim rounded-pill bg-danger">
-                                          {{ $item->status }}
-                                        </span>
-                                      @endif
-                                    </td> --}}
                                     <td>
                                       <a href="/admin/student/{{ $item->id }}/edit" class="btn btn-icon btn-sm btn-warning rounded-circle edit-button"><em class="icon ni ni-edit-alt"></em></a>
                                       

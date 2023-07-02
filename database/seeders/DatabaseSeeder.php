@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin'
         ]);
 
-        NewStudent::factory(50)->create();
+        NewStudent::factory(500)->create();
     }
 }
