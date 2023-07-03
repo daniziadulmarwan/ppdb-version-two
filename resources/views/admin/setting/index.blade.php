@@ -2,7 +2,6 @@
 
 @push('style')
     @livewireStyles
-  <link rel="stylesheet" href="/assets/power-switch.css">
 @endpush
 
 @section('content')
@@ -173,6 +172,12 @@
         setTimeout(() => {
             window.location.reload()
         }, 1500);
+    });
+
+    document.getElementById('customSwitch2').addEventListener('change', (e) => {
+        this.checkboxValue = e.target.checked ? 'on' : 'off';
+        console.log(this.checkboxValue)
+        Livewire.emit('turnSwitch', this.checkboxValue);
     });
   </script>
 @endpush
