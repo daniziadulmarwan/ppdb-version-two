@@ -34,6 +34,7 @@ Route::controller(ContactController::class)->group(function () {
 
 Route::controller(SettingController::class)->group(function () {
   route::get('/admin/setting', 'index');
+  route::delete('/admin/setting/{id}', 'destroy');
 });
 
 // 404 Route

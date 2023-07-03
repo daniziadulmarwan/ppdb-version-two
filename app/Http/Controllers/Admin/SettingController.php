@@ -61,6 +61,8 @@ class SettingController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = User::find($id);
+        $data->delete();
+        return response()->json(['msg' => 'Success delete data']);
     }
 }

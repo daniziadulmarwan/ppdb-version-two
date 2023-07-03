@@ -46,10 +46,7 @@
                                 <div class="tab-pane active" id="tabOne">
                                     <h4 class="title nk-block-title">User Account Information</h4>
                                     <p>Manage user account who can sign in to this app.</p>
-                                    <!-- Users Table Start -->
-                                    @include('admin.setting.user-table')
-                                    <!-- Users Table End -->
-
+                                    @include('admin.setting.tab-one')
                                 </div>
                                 <div class="tab-pane" id="tabTwo">
                                     <div class="nk-block-head">
@@ -59,7 +56,7 @@
                                         </div>
                                     </div>
                                     <div class="row g-gs">
-                                        @include('admin.setting.power-switch')
+                                        @include('admin.setting.tab-two')
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tabThree">
@@ -70,7 +67,7 @@
                                         </div>
                                     </div>
                                     <div class="row g-gs">
-                                        @include('admin.setting.change-password')
+                                        @include('admin.setting.tab-three')
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +81,6 @@
 
   @include('admin.setting.create-user-modal')
   @include('admin.setting.edit-user-modal')
-
 @endsection
 
 @push('script')
@@ -92,6 +88,14 @@
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
 
   <script>
+     $(function () {
+        $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"').attr("content"),
+            },
+        });
+    });
+
     Livewire.on('createNewUser', (msg) => {
         $('#modalCreateNewUser').modal('hide');
         Swal.fire({
@@ -101,10 +105,12 @@
             showConfirmButton: false,
             timer: 1500
         });
+        setTimeout(() => {
+            window.location.reload()
+        }, 1500);
     });
 
     function destroyUser(id) {
-        console.log(id)
         Swal.fire({
         title: "Are you sure?",
         text: "You want to destroy this data!",
@@ -114,9 +120,11 @@
         cancelButtonColor: "btn-danger",
         confirmButtonText: "Yes, delete it!",
         }).then((result) => {
+
             if (result.isConfirmed) {
-                Livewire.emit('destroyUserData', id);
+                console.log('makan')
             }
+            
         }).catch((error) => {
             console.log(error);
         });
@@ -130,6 +138,13 @@
             showConfirmButton: false,
             timer: 1500
         });
+        setTimeout(() => {
+            window.location.reload()
+        }, 1500);
     });
+
+    $('.table').on('click', '.edit-button', function() {
+        $('#userUpdateModal').modal('show')
+    })
   </script>
 @endpush

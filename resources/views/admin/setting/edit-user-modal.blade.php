@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalEditUser">
+<div class="modal fade" id="userUpdateModal">
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-body">
@@ -14,7 +14,6 @@
             <hr class="mb-3" style="border-style: dotted; border-color: rgb(28, 214, 152)">
 
             <!-- Start Form -->
-            {{-- @livewire('setting-edit-user') --}}
             <!-- Start Form -->
       </div>
   </div>
