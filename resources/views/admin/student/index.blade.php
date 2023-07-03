@@ -77,7 +77,7 @@
                                       
                                       <button class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash" onclick="destroyNewStudent({{ $item->id }})"></em></button>
 
-                                      <button class="btn btn-icon btn-sm btn-secondary rounded-circle show-modal" data-bs-toggle="modal" data-bs-target="#showNewStudentModal"><em class="icon ni ni-eye"></em></button>
+                                      <button class="btn btn-icon btn-sm btn-secondary rounded-circle show-modal" data-id="{{ $item->id }}"><em class="icon ni ni-eye"></em></button>
 
                                       <a href="#" class="btn btn-icon btn-sm btn-info rounded-circle"><em class="icon ni ni-file-text"></em></a>
                                     </td>
@@ -109,6 +109,8 @@
   <script>
     $('.table').on('click', '.show-modal', function() {
       $('#showNewStudentModal').modal('show');
+      let ids = $(this).data('id');
+      Livewire.emit('getStudentId', ids)
     });
   </script>
 @endpush
