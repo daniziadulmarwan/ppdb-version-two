@@ -88,14 +88,6 @@
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
 
   <script>
-     $(function () {
-        $.ajaxSetup({
-            headers: {
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"').attr("content"),
-            },
-        });
-    });
-
     Livewire.on('createNewUser', (msg) => {
         $('#modalCreateNewUser').modal('hide');
         Swal.fire({
@@ -120,14 +112,34 @@
         cancelButtonColor: "btn-danger",
         confirmButtonText: "Yes, delete it!",
         }).then((result) => {
-
             if (result.isConfirmed) {
-                console.log('makan')
+                fetch(`/admin/setting/${id}`, {
+                            headers: {
+                                'Content-type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                            },
+                            method: 'delete'
+                        }).then(res => res.json()).then(data => {
+                            if(data.message === 'success') {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Selamat!',
+                                    text: 'Data berhasil dihapus',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                                setTimeout(() => {
+                                    window.location.reload()
+                                }, 1500);
+                            }
+                        }).catch(err => {
+                            console.log(err);
+                        });
             }
             
-        }).catch((error) => {
-            console.log(error);
-        });
+            }).catch((error) => {
+                console.log(error);
+            });
     }
 
     Livewire.on('destroyDataUser', (msg) => {
@@ -145,6 +157,22 @@
 
     $('.table').on('click', '.edit-button', function() {
         $('#userUpdateModal').modal('show')
+        let id = $(this).data('id');
+        Livewire.emit('getSettingEditId', id);
     })
+
+    Livewire.on('userUpdated', () => {
+        $('#userUpdateModal').modal('hide');
+        Swal.fire({
+            icon: 'success',
+            title: 'Selamat!',
+            text: 'Berhasil update data',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        setTimeout(() => {
+            window.location.reload()
+        }, 1500);
+    });
   </script>
 @endpush

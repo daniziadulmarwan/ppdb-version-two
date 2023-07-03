@@ -63,6 +63,6 @@ class SettingController extends Controller
     {
         $data = User::find($id);
         $data->delete();
-        return response()->json(['msg' => 'Success delete data']);
+        return response()->json(['message' => 'success']);
     }
 }

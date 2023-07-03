@@ -1,4 +1,4 @@
-<form class="form-validate is-alter" wire:submit.prevent="submit">
+<form class="form-validate is-alter" wire:submit.prevent="update">
     <div class="form-group">
         <div class="form-control-wrap">
           <input wire:model="name" type="text" class="form-control form-control-lg @error('name')is-invalid @enderror" id="name" placeholder="Enter Full name">
@@ -36,7 +36,7 @@
                 <em class="passcode-icon icon-show icon ni ni-eye"></em>
                 <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
             </a>
-            <input wire:model="confirm_password" type="password" class="form-control form-control-lg @error('confirm_password')is-invalid @enderror" id="confirm_password" placeholder="Enter confirm password">
+            <input wire:model="confirm_password" type="password" class="form-control form-control-lg @error('confirm_password')is-invalid @enderror" id="confirm_password" placeholder="Confirm password">
             @error('confirm_password')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -45,7 +45,7 @@
 
     <div class="form-group">
       <div class="form-control-wrap">
-          <select wire:model="role" class="form-select js-select2 @error('role') is-invalid @enderror" data-ui="lg" id="outlined-select">
+          <select wire:model="role" class="form-select js-select2 @error('role') is-invalid @enderror" data-ui="lg" id="role">
               <option hidden>Choose One</option>
               <option value="admin">Admin</option>
               <option value="user">User</option>
