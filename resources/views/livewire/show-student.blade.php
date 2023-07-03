@@ -150,38 +150,38 @@
             <div class="col-md-6">
               <div class="mb-4">
                 <h6 class="mb-0">Nomor KK</h6>
-                <span>167184150214326</span>
+                <span>{{ $data?->no_kk }}</span>
               </div>
               <div class="mb-4">
                 <h6 class="mb-0">NIK Ayah</h6>
-                <span>3403445008019689</span>
+                <span>{{ $data?->nik_ayah }}</span>
               </div>
               <div class="mb-4">
                 <h6 class="mb-0">Nama Ayah</h6>
-                <span>Melinda Prastuti</span>
+                <span>{{ $data?->nama_ayah }}</span>
               </div>
               <div class="mb-4">
                 <h6 class="mb-0">Pekerjaan Ayah</h6>
-                <span>Guru</span>
+                <span>{{ $data?->pekerjaan_ayah }}</span>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="mb-4">
                 <h6 class="mb-0">Penghasilan Ayah</h6>
-                <span>Rp. 1.000.000 - Rp. 2.000.000</span>
+                <span>{{ $data?->penghasilan_ayah }}</span>
               </div>
               <div class="mb-4">
                 <h6 class="mb-0">NIK Ibu</h6>
-                <span>3602504902949093</span>
+                <span>{{ $data?->nik_ibu }}</span>
               </div>
               <div class="mb-4">
                 <h6 class="mb-0">Nama Ibu</h6>
-                <span>Ganep Siregar</span>
+                <span>{{ $data?->nama_ibu }}</span>
               </div>
               <div class="mb-4">
                 <h6 class="mb-0">Pekerjaan Ibu</h6>
-                <span>Guru</span>
+                <span>{{ $data?->pekerjaan_ibu }}</span>
               </div>
             </div>
           </div>
