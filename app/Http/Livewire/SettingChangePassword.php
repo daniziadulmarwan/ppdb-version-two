@@ -22,6 +22,6 @@ class SettingChangePassword extends Component
 
     public function updatePassword()
     {
-        //
+        $this->validate();
     }
 }
