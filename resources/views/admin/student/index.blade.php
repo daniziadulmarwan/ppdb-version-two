@@ -48,7 +48,6 @@
                                     <th>Jenjang</th>
                                     <th>Pesantren</th>
                                     <th>Tanggal Daftar</th>
-                                    {{-- <th>Status</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -78,7 +77,7 @@
                                       
                                       <button class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash" onclick="destroyNewStudent({{ $item->id }})"></em></button>
 
-                                      <a href="#" class="btn btn-icon btn-sm btn-secondary rounded-circle"><em class="icon ni ni-eye"></em></a>
+                                      <button class="btn btn-icon btn-sm btn-secondary rounded-circle show-modal" data-bs-toggle="modal" data-bs-target="#showNewStudentModal"><em class="icon ni ni-eye"></em></button>
 
                                       <a href="#" class="btn btn-icon btn-sm btn-info rounded-circle"><em class="icon ni ni-file-text"></em></a>
                                     </td>
@@ -96,6 +95,8 @@
         </div>
     </div>
   </div>
+
+  @include('admin.student.show')
 @endsection
 
 
@@ -104,4 +105,10 @@
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
   <script src="/assets/js/example-sweetalert.js?ver=3.1.1"></script>
   <script src="/assets/custom/js/student.js"></script>
+
+  <script>
+    $('.table').on('click', '.show-modal', function() {
+      $('#showNewStudentModal').modal('show');
+    });
+  </script>
 @endpush
