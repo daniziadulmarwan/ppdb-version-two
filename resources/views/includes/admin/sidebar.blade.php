@@ -47,15 +47,21 @@
                             <span class="nk-menu-text">Contacts</span>
                         </a>
                     </li>
-                    <li class="nk-menu-heading">
-                        <h6 class="overline-title text-primary-alt">Applications</h6>
-                    </li>
-                    <li class="nk-menu-item">
-                        <a href="/admin/notif" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-bell-fill"></em></span>
-                            <span class="nk-menu-text">Notifications</span>
-                        </a>
-                    </li>
+
+                    <!-- Administrator Start -->
+                    @if (auth()->user()->role == 'admin')
+                        <li class="nk-menu-heading">
+                            <h6 class="overline-title text-primary-alt">Applications</h6>
+                        </li>
+                        <li class="nk-menu-item">
+                            <a href="/admin/notif" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-bell-fill"></em></span>
+                                <span class="nk-menu-text">Notifications</span>
+                            </a>
+                        </li>
+                    @endif
+                    <!-- Administrator Start -->
+
                     <li class="nk-menu-item">
                         <a href="/admin/setting" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-setting"></em></span>

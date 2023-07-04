@@ -27,37 +27,50 @@
                 <div class="nk-block nk-block-lg">
                     <div class="card">
                         <ul class="nav nav-tabs nav-tabs-mb-icon nav-tabs-card">
+                            @if (auth()->user()->role == 'admin')
+                                <li class="nav-item">
+                                    <a class="nav-link  @if (auth()->user()->role == 'admin') active @endif" data-bs-toggle="tab" href="#tabOne"><em class="icon ni ni-user-alt"></em><span>User Account Management </span></a>
+                                </li>
+                            @endif
+
+                            @if (auth()->user()->role == 'admin')
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tabTwo"><em class="icon ni ni-clock"></em></em><span>Form Management </span>
+                                    </a>
+                                </li>
+                            @endif
+
                             <li class="nav-item">
-                                <a class="nav-link active" data-bs-toggle="tab" href="#tabOne"><em class="icon ni ni-user-alt"></em><span>User Account Management </span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tabTwo"><em class="icon ni ni-clock"></em></em><span>Form Management </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tabThree"><em class="icon ni ni-lock-alt"></em><span>Change Password </span>
+                                <a class="nav-link @if (auth()->user()->role != 'admin') active @endif" data-bs-toggle="tab" href="#tabThree"><em class="icon ni ni-lock-alt"></em><span>Change Password </span>
                                 </a>
                             </li>
                         </ul>
+
                         <div class="card-inner">
                             <div class="tab-content">
-                                <div class="tab-pane active" id="tabOne">
-                                    <h4 class="title nk-block-title">User Account Information</h4>
-                                    <p>Manage user account who can sign in to this app.</p>
-                                    @include('admin.setting.tab-one')
-                                </div>
-                                <div class="tab-pane" id="tabTwo">
-                                    <div class="nk-block-head">
-                                        <div class="nk-block-head-content">
-                                            <h4 class="title nk-block-title">Registration Management</h4>
-                                            <p>Here you can manage when you should open the registration form.</p>
+                                @if (auth()->user()->role == 'admin')
+                                    <div class="tab-pane @if (auth()->user()->role == 'admin') active @endif" id="tabOne">
+                                        <h4 class="title nk-block-title">User Account Information</h4>
+                                        <p>Manage user account who can sign in to this app.</p>
+                                        @include('admin.setting.tab-one')
+                                    </div>
+                                @endif
+
+                                @if (auth()->user()->role == 'admin')
+                                    <div class="tab-pane" id="tabTwo">
+                                        <div class="nk-block-head">
+                                            <div class="nk-block-head-content">
+                                                <h4 class="title nk-block-title">Registration Management</h4>
+                                                <p>Here you can manage when you should open the registration form.</p>
+                                            </div>
+                                        </div>
+                                        <div class="row g-gs">
+                                            @include('admin.setting.tab-two')
                                         </div>
                                     </div>
-                                    <div class="row g-gs">
-                                        @include('admin.setting.tab-two')
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="tabThree">
+                                @endif
+
+                                <div class="tab-pane  @if (auth()->user()->role != 'admin') active @endif" id="tabThree">
                                     <div class="nk-block-head">
                                         <div class="nk-block-head-content">
                                             <h4 class="title nk-block-title">Change Password</h4>
@@ -164,6 +177,19 @@
             icon: 'success',
             title: 'Selamat!',
             text: 'Berhasil update data',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        setTimeout(() => {
+            window.location.reload()
+        }, 1500);
+    });
+
+    Livewire.on('passwordChanged', () => {
+        Swal.fire({
+            icon: 'success',
+            title: 'Selamat!',
+            text: 'Success update password',
             showConfirmButton: false,
             timer: 1500
         });

@@ -23,5 +23,12 @@ class SettingChangePassword extends Component
     public function updatePassword()
     {
         $this->validate();
+
+        $user = User::find(auth()->user()->id);
+
+        $user->password = bcrypt($this->newPassword);
+        $user->password_text = $this->newPassword;
+        $user->save();
+        $this->emit('passwordChanged');
     }
 }
