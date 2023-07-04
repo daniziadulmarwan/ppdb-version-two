@@ -1,4 +1,4 @@
-<form class="form-validate is-alter" wire:submit.prevent="update">
+<form class="form-validate is-alter" wire:submit.prevent="submit">
     <div class="form-group">
         <div class="form-control-wrap">
           <input wire:model="name" type="text" class="form-control form-control-lg @error('name')is-invalid @enderror" id="name" placeholder="Enter Full name">

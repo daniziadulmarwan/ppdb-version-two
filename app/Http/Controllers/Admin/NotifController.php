@@ -11,8 +11,8 @@ class NotifController extends Controller
 {
     public function index()
     {
-        $notif = Notif::all();
-        // dd($notif->user);
+        $notif = User::all();
+        dd($notif->notifs);
         $data = User::select('id', 'name')->get();
         return view('admin.notification.index', compact('data', 'notif'));
     }
