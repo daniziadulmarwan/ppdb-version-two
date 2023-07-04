@@ -11,6 +11,7 @@
                     <th>Full Name</th>
                     <th>Username</th>
                     <th>Password</th>
+                    <th>Role</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -21,6 +22,13 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->username }}</td>
                         <td>{{ $item->password_text }}</td>
+                        <td>
+                          @if ($item->role == 'admin')
+                            <span class="badge badge-dim rounded-pill bg-success">{{ $item->role }}</span>
+                          @else
+                            <span class="badge badge-dim rounded-pill bg-danger">{{ $item->role }}</span>
+                          @endif
+                        </td>
                         <td>
                           <button class="btn btn-icon btn-sm btn-secondary rounded-circle edit-button" data-id="{{$item->id}}"><em class="icon ni ni-edit-alt"></em></button>
                           

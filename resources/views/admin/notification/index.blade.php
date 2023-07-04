@@ -49,10 +49,11 @@
                               @foreach ($notif as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->user_to_notif }}</td>
+                                    <td>{{ $item->user->name }}</td>
                                     <td>{{ $item->text }}</td>
                                     <td>
-                                      <button>edit</button>
+                                      <button class="btn btn-icon btn-sm btn-secondary rounded-circle edit-button" data-id="{{$item->id}}"><em class="icon ni ni-edit-alt"></em></button>
+                                      <button onclick="destroyUser({{ $item->id }})" class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash"></em></button>
                                     </td>
                                 </tr>
                               @endforeach
