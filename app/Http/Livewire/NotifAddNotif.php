@@ -24,6 +24,6 @@ class NotifAddNotif extends Component
 
     public function submit()
     {
-        dd($this->userToNotif);
+        dd($this->text);
     }
 }

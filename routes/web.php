@@ -40,6 +40,7 @@ Route::controller(SettingController::class)->group(function () {
 
 Route::controller(NotifController::class)->group(function() {
   route::get('/admin/notif', 'index');
+  route::post('/admin/notif/create', 'store');
 });
 
 // 404 Route

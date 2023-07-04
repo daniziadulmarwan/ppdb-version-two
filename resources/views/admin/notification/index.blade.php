@@ -46,22 +46,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              {{-- @foreach ($data as $item)
+                              @foreach ($notif as $item)
                                 <tr>
-                                    <td>{{ $item->reg_number }}</td>
-                                    <td>{{ $item->fullname }}</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->user_to_notif }}</td>
+                                    <td>{{ $item->text }}</td>
                                     <td>
-                                      <span class="badge bg-outline-info">
-                                        {{ Str::replace(' ', '', Str::replace('(+62)', '0', $item->wa_number)) }}
-                                      </span>
+                                      <button>edit</button>
                                     </td>
-                                    <td>
-                                      <span class="badge bg-outline-danger">
-                                        {{ $item->email }}</td>
-                                      </span>
-                                    <td>{{ $item->address }}</td>
                                 </tr>
-                              @endforeach --}}
+                              @endforeach
                             </tbody>
                         </table>
                         </div>
@@ -83,10 +77,10 @@
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
 
   <script>
-    $('#multi-user-select').on('change', function() {
-      let ids = $(this).val();
-      console.log(ids)
-      Livewire.emit('multiIds', ids);
-    });
+    // $('#multi-user-select').on('change', function() {
+    //   let ids = $(this).val();
+    //   console.log(ids)
+    //   Livewire.emit('multiIds', ids);
+    // });
   </script>
 @endpush

@@ -3,58 +3,46 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Notif;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class NotifController extends Controller
 {
     public function index()
     {
-        return view('admin.notification.index');
+        $notif = Notif::all();
+        // dd($notif->user);
+        $data = User::select('id', 'name')->get();
+        return view('admin.notification.index', compact('data', 'notif'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        foreach($request->user_to_notif as $item) {
+            Notif::create([
+                'user_to_notify' => $item,
+                'text' => $request->text
+            ]);
+        }
+        return redirect('/admin/notif');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //
