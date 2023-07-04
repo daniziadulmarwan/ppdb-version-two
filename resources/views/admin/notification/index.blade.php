@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @push('style')
+  @livewireStyles
 @endpush
 
 @section('content')
@@ -29,14 +30,19 @@
                   <div class="card">
                     <div class="nk-ecwg nk-ecwg6">
                         <div class="card-inner">
+                          <!-- Export Buttons Start -->
+                          <div class="mb-3">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreateNotif"><em class="icon ni ni-plus-circle"></em><span>Add Notification</span></button>
+                          </div>
+                          <!-- Export Buttons End -->
+
                           <table class="datatable-init nowrap table" data-export-title="Export">
                             <thead>
                                 <tr>
-                                    <th>No. Reg</th>
-                                    <th>Name</th>
-                                    <th>Phone Number</th>
-                                    <th>Email</th>
-                                    <th>Address</th>
+                                    <th>No</th>
+                                    <th>User To Notif</th>
+                                    <th>Text</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,9 +73,20 @@
         </div>
     </div>
   </div>
+
+  @include('admin.notification.add-notif-modal')
 @endsection
 
 
 @push('script')
+  @livewireScripts
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
+
+  <script>
+    $('#multi-user-select').on('change', function() {
+      let ids = $(this).val();
+      console.log(ids)
+      Livewire.emit('multiIds', ids);
+    });
+  </script>
 @endpush
