@@ -6,13 +6,18 @@ use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\NewStudentController;
 use App\Http\Controllers\Admin\NotifController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IndonesiaController;
 use App\Models\NewStudent;
 use Illuminate\Support\Facades\Route;
 
 // Guest
 Route::view('/', 'pages.index');
-Route::view('/signin', 'pages.signin');
+
+Route::controller(AuthController::class)->group(function() {
+  route::get('/signin', 'signin')->name('login');
+  route::post('/signin', 'login');
+});
 
 // Auth
 Route::controller(DashboardController::class)->group(function () {

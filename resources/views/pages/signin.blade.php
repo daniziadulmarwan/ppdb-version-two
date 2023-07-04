@@ -16,6 +16,7 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="/assets/css/dashlite.css?ver=3.1.1">
     <link id="skin-default" rel="stylesheet" href="/assets/css/theme.css?ver=3.1.1">
+    @vite('resources/js/app.js')
 </head>
 
 <body class="nk-body bg-white npc-default pg-auth">
@@ -60,6 +61,7 @@
                                   </div>
                               </div>
 
+                              <!-- Start Form -->
                               <form action="/signin" class="form-validate is-alter" autocomplete="off" method="post">
                                   @csrf
                                   <div class="form-group">
@@ -67,7 +69,10 @@
                                           <label class="form-label" for="username">Email or Username</label>
                                       </div>
                                       <div class="form-control-wrap">
-                                          <input autocomplete="off" type="text" class="form-control form-control-lg" id="username" placeholder="Enter your email address or username" name="username">
+                                          <input autocomplete="off" type="text" class="form-control form-control-lg @error('username') is-invalid @enderror" id="username" placeholder="Enter your email address or username" name="username">
+                                          @error('username')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                          @enderror
                                       </div>
                                   </div>
                                   <div class="form-group">
@@ -79,13 +84,18 @@
                                               <em class="passcode-icon icon-show icon ni ni-eye"></em>
                                               <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                                           </a>
-                                          <input autocomplete="new-password" type="password" class="form-control form-control-lg" id="password" placeholder="Enter your passcode" name="password">
+                                          <input autocomplete="new-password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" id="password" placeholder="Enter your passcode" name="password">
+                                          @error('password')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                          @enderror   
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
                                   </div>
                               </form>
+                              <!-- End Form -->
+
                             @endif
 
                           </div>
