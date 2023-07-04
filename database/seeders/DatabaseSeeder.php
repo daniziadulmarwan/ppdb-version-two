@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\NewStudent;
 use App\Models\Pendaftaran;
+use App\Models\SettingTime;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -22,5 +23,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         NewStudent::factory(500)->create();
+
+        SettingTime::create([
+            'time' => 'off'
+        ]);
+
+        $this->call(IndoRegionProvinceSeeder::class);
+        $this->call(IndoRegionRegencySeeder::class);
+        $this->call(IndoRegionDistrictSeeder::class);
+        $this->call(IndoRegionVillageSeeder::class);
     }
 }
