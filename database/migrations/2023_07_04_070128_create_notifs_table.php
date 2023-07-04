@@ -10,7 +10,9 @@ return new class extends Migration
     {
         Schema::create('notifs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_to_notify')->references('id')->on('users')->onDelete('cascade');
+            $table->string('text');
+            $table->enum('seen_by_user', ['yes', 'no'])->default('no');
             $table->timestamps();
         });
     }

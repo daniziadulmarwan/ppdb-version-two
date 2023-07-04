@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\NewStudentController;
+use App\Http\Controllers\Admin\NotifController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\IndonesiaController;
 use App\Models\NewStudent;
@@ -35,6 +36,10 @@ Route::controller(ContactController::class)->group(function () {
 Route::controller(SettingController::class)->group(function () {
   route::get('/admin/setting', 'index');
   route::delete('/admin/setting/{id}', 'destroy');
+});
+
+Route::controller(NotifController::class)->group(function() {
+  route::get('/admin/notif', 'index');
 });
 
 // 404 Route
