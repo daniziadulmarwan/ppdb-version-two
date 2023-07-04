@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @push('style')
-  @livewireStyles
 @endpush
 
 
@@ -101,7 +100,6 @@
 
 
 @push('script')
-  @livewireScripts
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
   <script src="/assets/js/example-sweetalert.js?ver=3.1.1"></script>
   <script src="/assets/custom/js/student.js"></script>

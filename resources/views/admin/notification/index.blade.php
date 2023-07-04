@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @push('style')
-  @livewireStyles
 @endpush
 
 @section('content')
@@ -52,7 +51,7 @@
                                     <td>{{ $item->user->name }}</td>
                                     <td>{{ $item->text }}</td>
                                     <td>
-                                      <button class="btn btn-icon btn-sm btn-secondary rounded-circle edit-button" data-id="{{$item->id}}"><em class="icon ni ni-edit-alt"></em></button>
+                                      <button class="btn btn-icon btn-sm btn-secondary rounded-circle edit-button" data-id="{{ $item->id }}"><em class="icon ni ni-edit-alt"></em></button>
                                       <button onclick="destroyUser({{ $item->id }})" class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash"></em></button>
                                     </td>
                                 </tr>
@@ -74,14 +73,5 @@
 
 
 @push('script')
-  @livewireScripts
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
-
-  <script>
-    // $('#multi-user-select').on('change', function() {
-    //   let ids = $(this).val();
-    //   console.log(ids)
-    //   Livewire.emit('multiIds', ids);
-    // });
-  </script>
 @endpush

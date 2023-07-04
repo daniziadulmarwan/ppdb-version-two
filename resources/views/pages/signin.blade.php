@@ -62,14 +62,14 @@
                               </div>
 
                               <!-- Start Form -->
-                              <form action="/signin" class="form-validate is-alter" autocomplete="off" method="post">
+                              <form action="/signin" class="form-validate is-alter" method="post">
                                   @csrf
                                   <div class="form-group">
                                       <div class="form-label-group">
                                           <label class="form-label" for="username">Email or Username</label>
                                       </div>
                                       <div class="form-control-wrap">
-                                          <input autocomplete="off" type="text" class="form-control form-control-lg @error('username') is-invalid @enderror" id="username" placeholder="Enter your email address or username" name="username">
+                                          <input type="text" class="form-control form-control-lg @error('username') is-invalid @enderror" id="username" placeholder="Enter your email address or username" name="username">
                                           @error('username')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                           @enderror

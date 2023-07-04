@@ -14,6 +14,8 @@
     <!-- Page Title  -->
     <title>PPDB AL-AMIN PULOERANG</title>
 
+    @livewireStyles
+
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="/assets/css/dashlite.css?ver=3.1.1">
     <link id="skin-default" rel="stylesheet" href="/assets/css/theme.css?ver=3.1.1">
@@ -55,9 +57,18 @@
     </div>
 
     <!-- JavaScript -->
+    @livewireScripts
     <script src="/assets/js/bundle.js?ver=3.1.1"></script>
     <script src="/assets/js/scripts.js?ver=3.1.1"></script>
     <script src="/assets/js/charts/chart-ecommerce.js?ver=3.1.1"></script>
+
+    <script>
+        // $('#notif-wrapper').on('click', function() {
+        // let id = $(this).data('id');
+        // console.log(id)
+        // Livewire.emit('notifId', id);
+        // });
+    </script>
 
     <!-- Addon Javascript -->
     @stack('script')

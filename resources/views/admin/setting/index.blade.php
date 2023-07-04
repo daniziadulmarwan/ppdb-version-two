@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @push('style')
-    @livewireStyles
 @endpush
 
 @section('content')
@@ -83,7 +82,6 @@
 @endsection
 
 @push('script')
-  @livewireScripts
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
 
   <script>

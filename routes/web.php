@@ -17,33 +17,34 @@ Route::view('/', 'pages.index');
 Route::controller(AuthController::class)->group(function() {
   route::get('/signin', 'signin')->name('login');
   route::post('/signin', 'login');
+  route::delete('/signout', 'logout');
 });
 
 // Auth
-Route::controller(DashboardController::class)->group(function () {
+Route::controller(DashboardController::class)->middleware('auth')->group(function () {
   route::get('/admin/dashboard', 'index');
 });
 
-Route::controller(NewStudentController::class)->group(function () {
+Route::controller(NewStudentController::class)->middleware('auth')->group(function () {
   route::get('/admin/student', 'index');
   route::get('/admin/student/create', 'create');
   route::get('/admin/student/{id}/edit', 'edit');
 });
 
-Route::controller(DocumentController::class)->group(function () {
+Route::controller(DocumentController::class)->middleware('auth')->group(function () {
   route::get('/admin/document', 'index');
 });
 
-Route::controller(ContactController::class)->group(function () {
+Route::controller(ContactController::class)->middleware('auth')->group(function () {
   route::get('/admin/contact', 'index');
 });
 
-Route::controller(SettingController::class)->group(function () {
+Route::controller(SettingController::class)->middleware('auth')->group(function () {
   route::get('/admin/setting', 'index');
   route::delete('/admin/setting/{id}', 'destroy');
 });
 
-Route::controller(NotifController::class)->group(function() {
+Route::controller(NotifController::class)->middleware('auth')->group(function() {
   route::get('/admin/notif', 'index');
   route::post('/admin/notif/create', 'store');
 });
