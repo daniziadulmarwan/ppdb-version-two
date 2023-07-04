@@ -70,7 +70,7 @@
                                     <form action="/signout" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn p-0"><em class="icon ni ni-signout"></em><span>Sign out</span></button></li>
+                                        <button type="submit" class="btn p-0" style="font-size: 14px; color: #8094ae; font-weight: 500"><em class="icon ni ni-signout"></em><span>Sign Out</span></button></li>
                                     </form>
                             </ul>
                         </div>
