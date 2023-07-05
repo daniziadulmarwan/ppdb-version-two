@@ -3,6 +3,11 @@
 @push('style')
   @livewireStyles
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link href="/assets/filepond/filepond.css" rel="stylesheet" />
+  <link
+    href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+    rel="stylesheet"
+  />
 @endpush
 
 @section('content')
@@ -518,6 +523,25 @@
                                 </div>
                               </div>
                             </div>
+
+                            <!-- Upload Document -->
+                            <div class="col-md-12 mb-4">
+                              <div class="card">
+                                <div class="card-body">
+                        
+                                  <!-- Title Header -->
+                                  <h6 class="text-primary">Upload Berkas</h6>
+                                  <hr style="border: 1px dashed rgb(157, 238, 218);">
+                                  
+                                  <!-- Upload Berkas Dokumen -->
+                                  <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <input type="file" class="form-control filepond" name="filepond" multiple data-allow-reorder="true" data-max-file-size="3MB" data-max-files="3">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         
                             <div class="col-md-12 mb-4">
                               <div class="card">
@@ -563,4 +587,13 @@
   @livewireScripts
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <script src="/assets/custom/js/student.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+  <script src="/assets/filepond/filepond.js"></script>
+
+  <script>
+    FilePond.registerPlugin(FilePondPluginImagePreview);
+    FilePond.create(
+      document.querySelector('.filepond')
+    );
+  </script>
 @endpush
