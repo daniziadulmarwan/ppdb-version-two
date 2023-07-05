@@ -7,8 +7,8 @@
           </div>
           <div class="nk-header-brand d-xl-none">
               <a href="/admin/dashboard" class="logo-link">
-                  <img class="logo-light logo-img" src="/assets/images/ppdb.png" srcset="/assets/images/ppdb.png 2x" alt="logo">
-                  <img class="logo-dark logo-img" src="/assets/images/ppdb.png" srcset="/assets/images/ppdb.png 2x" alt="logo-dark">
+                  <img class="logo-light logo-img" src="/assets/images/ppdb-light.png" srcset="/assets/images/ppdb-light.png 2x" alt="logo">
+                  <img class="logo-dark logo-img" src="/assets/images/ppdb-dark.png" srcset="/assets/images/ppdb-dark.png 2x" alt="logo-dark">
               </a>
           </div>
           

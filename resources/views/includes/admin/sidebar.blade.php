@@ -3,11 +3,11 @@
   <div class="nk-sidebar-element nk-sidebar-head">
       <div class="nk-sidebar-brand">
           <a href="/admin/dashboard" class="logo-link nk-sidebar-logo">
-              <img class="logo-light logo-img" src="/assets/images/ppdb-alamin.png" srcset="/assets/images/ppdb.png 2x" alt="logo">
+              <img class="logo-light logo-img" src="/assets/images/ppdb-light.png" srcset="/assets/images/ppdb-light.png 2x" alt="logo">
 
-              <img class="logo-dark logo-img" src="/assets/images/ppdb.png" srcset="/assets/images/ppdb.png 2x" alt="logo-dark">
+              <img class="logo-dark logo-img" src="/assets/images/ppdb-dark.png" srcset="/assets/images/ppdb-dark.png 2x" alt="logo-dark">
 
-              <img class="logo-small logo-img logo-img-small" src="/assets/images/ppdb.png" srcset="/assets/images/ppdb.png 2x" alt="logo-small">
+              <img class="logo-small logo-img logo-img-small" src="/assets/images/logo.png" srcset="/assets/images/logo.png 2x" alt="logo-small">
           </a>
       </div>
       <div class="nk-menu-trigger me-n2">
