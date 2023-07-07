@@ -9,7 +9,7 @@ class AuthController extends Controller
 {
     public function signin()
     {
-        if(Auth::user()) {
+        if (Auth::user()) {
             return redirect('/admin/dashboard');
         }
         return view('pages.signin');
