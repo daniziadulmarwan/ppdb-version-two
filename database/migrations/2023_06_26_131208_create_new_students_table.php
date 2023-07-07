@@ -62,14 +62,12 @@ return new class extends Migration
             $table->string('kip_number')->nullable();
 
             // Upload Berkas
-            $table->string('kk');
+            $table->string('kk')->nullable();
             $table->string('akte')->nullable();
             $table->string('foto')->nullable();
 
             // Validation
             $table->string('agree');
-            $table->enum('status', ['reject', 'accept', 'pending'])->default('pending');
-
             $table->timestamps();
         });
     }
