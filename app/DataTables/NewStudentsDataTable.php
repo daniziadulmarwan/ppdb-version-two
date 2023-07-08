@@ -59,7 +59,6 @@ class NewStudentsDataTable extends DataTable
             ->setTableId('newstudents-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->dom('Bfrtip')
             ->orderBy(1)
             ->selectStyleSingle()
             ->searching()
