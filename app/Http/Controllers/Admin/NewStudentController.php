@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\DataTables\NewStudentsDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\NewStudent;
 use App\Models\Province;
@@ -9,10 +10,12 @@ use Illuminate\Http\Request;
 
 class NewStudentController extends Controller
 {
-    public function index()
+    public function index(NewStudentsDataTable $dataTable)
     {
-        $data = NewStudent::latest()->get();
-        return view('admin.student.index', compact('data'));
+        // $data = NewStudent::latest()->get();
+        // return view('admin.student.index', compact('data'));
+
+        return $dataTable->render('admin.student.index');
     }
 
     public function create()

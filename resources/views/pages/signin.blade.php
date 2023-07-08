@@ -35,9 +35,9 @@
 
                             <!-- Start Brand -->
                             <div class="brand-logo pb-5">
-                                <a href="html/index.html" class="logo-link">
-                                    <img class="logo-light logo-img logo-img-lg" src="/assets/images/ppdb.png" srcset="/assets/images/ppdb.png 2x" alt="logo">
-                                    <img class="logo-dark logo-img logo-img-lg" src="/assets/images/ppdb.png" srcset="/assets/images/ppdb.png 2x" alt="logo-dark">
+                                <a href="/signin" class="logo-link">
+                                    <img class="logo-light logo-img logo-img-lg" src="/assets/images/ppdb-dark.png" srcset="/assets/images/ppdb-dark.png 2x" alt="logo">
+                                    <img class="logo-dark logo-img logo-img-lg" src="/assets/images/ppdb-light.png" srcset="/assets/images/ppdb-light.png 2x" alt="logo-dark">
                                 </a>
                             </div>
                             <!-- Start Brand -->

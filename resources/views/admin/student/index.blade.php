@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @push('style')
+  <link href="https://cdn.datatables.net/v/bs5/dt-1.13.5/datatables.min.css" rel="stylesheet"/>
 @endpush
 
 
@@ -38,7 +39,7 @@
                           </div>
                           <!-- Export Buttons End -->
 
-                          <table class="datatable-init nowrap table" data-export-title="Export" id="table-new-student">
+                          {{-- <table class="datatable-init nowrap table" data-export-title="Export" id="table-new-student">
                             <thead>
                                 <tr>
                                     <th>No. Reg</th>
@@ -83,7 +84,9 @@
                                 </tr>
                               @endforeach
                             </tbody>
-                          </table>
+                          </table> --}}
+
+                          {{ $dataTable->table() }}
 
                         </div>
                     </div>
@@ -100,8 +103,10 @@
 
 
 @push('script')
-  <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
+  {{-- <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script> --}}
+  <script src="https://cdn.datatables.net/v/bs5/dt-1.13.5/datatables.min.js"></script>
   <script src="/assets/js/example-sweetalert.js?ver=3.1.1"></script>
+  {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
   <script src="/assets/custom/js/student.js"></script>
 
   <script>
