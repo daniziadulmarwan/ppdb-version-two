@@ -17,4 +17,9 @@ class StudentExport implements FromView
             'data' => NewStudent::all()
         ]);
     }
+
+    // public function collection(): Collection
+    // {
+    //     return NewStudent::all();
+    // }
 }
