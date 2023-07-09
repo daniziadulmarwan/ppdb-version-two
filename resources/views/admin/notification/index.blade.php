@@ -51,7 +51,6 @@
                                     <td>{{ $item->user->name }}</td>
                                     <td>{{ $item->text }}</td>
                                     <td>
-                                      <button class="btn btn-icon btn-sm btn-secondary rounded-circle edit-button-live" data-id="{{ $item->id }}"><em class="icon ni ni-edit-alt"></em></button>
                                       <button onclick="destroyUser({{ $item->id }})" class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash"></em></button>
                                     </td>
                                 </tr>
@@ -74,11 +73,45 @@
 
 @push('script')
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
-  {{-- <script>
-    $("#table-notif").on("click", ".edit-button-live", function () {
-      $('#modalCreateNotifLive').modal('show');
-      let id = $(this).data("id");
-      Livewire.emit("getIdNotif", id);
-    });
-  </script> --}}
+  <script>
+    function destroyUser(id) {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You want to destroy this data!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "btn-success",
+          cancelButtonColor: "btn-danger",
+          confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`/admin/notif/${id}`, {
+                  headers: {
+                      'Content-type': 'application/json',
+                      'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                  },
+                  method: 'delete'
+                }).then(res => res.json()).then(data => {
+                    if(data.message === 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Selamat!',
+                            text: 'Data berhasil dihapus',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        setTimeout(() => {
+                            window.location.reload()
+                        }, 1500);
+                    }
+                }).catch(err => {
+                    console.log(err);
+                });
+            }
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+    
+  </script>
 @endpush

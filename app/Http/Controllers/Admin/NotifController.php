@@ -33,23 +33,10 @@ class NotifController extends Controller
         return redirect('/admin/notif');
     }
 
-    public function show(string $id)
-    {
-        //
-    }
-
-    public function edit(string $id)
-    {
-        //
-    }
-
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
     public function destroy(string $id)
     {
-        //
+        $data = Notif::find($id);
+        $data->delete();
+        return response()->json(['message' => 'success']);
     }
 }

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 // Guest
 Route::view('/', 'pages.index');
 
-Route::controller(AuthController::class)->group(function() {
+Route::controller(AuthController::class)->group(function () {
   route::get('/signin', 'signin')->name('login');
   route::post('/signin', 'login');
   route::delete('/signout', 'logout');
@@ -44,9 +44,10 @@ Route::controller(SettingController::class)->middleware('auth')->group(function 
   route::delete('/admin/setting/{id}', 'destroy');
 });
 
-Route::controller(NotifController::class)->middleware('auth')->group(function() {
+Route::controller(NotifController::class)->middleware('auth')->group(function () {
   route::get('/admin/notif', 'index');
   route::post('/admin/notif/create', 'store');
+  route::delete('/admin/notif/{id}', 'destroy');
 });
 
 // 404 Route
