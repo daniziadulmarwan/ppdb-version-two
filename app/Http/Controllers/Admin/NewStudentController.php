@@ -3,18 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\DataTables\NewStudentsDataTable;
+use App\Exports\StudentExport;
 use App\Http\Controllers\Controller;
 use App\Models\NewStudent;
 use App\Models\Province;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class NewStudentController extends Controller
 {
     public function index(NewStudentsDataTable $dataTable)
     {
-        // $data = NewStudent::latest()->get();
-        // return view('admin.student.index', compact('data'));
-
         return $dataTable->render('admin.student.index');
     }
 
@@ -29,9 +28,9 @@ class NewStudentController extends Controller
         //
     }
 
-    public function show(string $id)
+    public function export()
     {
-        //
+        return Excel::download(new StudentExport, 'students.xlsx');
     }
 
     public function edit(string $id)

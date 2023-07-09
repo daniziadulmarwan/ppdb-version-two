@@ -35,7 +35,7 @@
                           <!-- Export Buttons Start -->
                           <div class="mb-3">
                             <a href="/admin/student/create" class="btn btn-primary"><em class="icon ni ni-plus-circle"></em><span>Create New Student</span></a>
-                            <a href="#" class="btn btn-success"><em class="icon ni ni-file-xls"></em><span>Export Excel</span></a>
+                            <a href="/admin/student/export" class="btn btn-success"><em class="icon ni ni-file-xls"></em><span>Export Excel</span></a>
                           </div>
                           <!-- Export Buttons End -->
 

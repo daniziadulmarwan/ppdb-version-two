@@ -29,6 +29,7 @@ Route::controller(NewStudentController::class)->middleware('auth')->group(functi
   route::get('/admin/student', 'index');
   route::get('/admin/student/create', 'create');
   route::get('/admin/student/{id}/edit', 'edit');
+  route::get('/admin/student/export', 'export');
 });
 
 Route::controller(DocumentController::class)->middleware('auth')->group(function () {
