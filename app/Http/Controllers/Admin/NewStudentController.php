@@ -30,7 +30,8 @@ class NewStudentController extends Controller
 
     public function export()
     {
-        return Excel::download(new StudentExport, 'students.xlsx');
+        return Excel::download(new StudentExport, 'students-' . time() . '.csv');
+        // return Excel::download(new StudentExport, 'students-' . time() . '.html', \Maatwebsite\Excel\Excel::HTML);
     }
 
     public function edit(string $id)

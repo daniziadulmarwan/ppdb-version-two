@@ -68,6 +68,7 @@ return new class extends Migration
 
             // Validation
             $table->string('agree');
+            $table->enum('status', ['pending', 'reject', 'accept'])->default('pending');
             $table->timestamps();
         });
     }

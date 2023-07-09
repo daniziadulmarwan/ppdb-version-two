@@ -24,7 +24,7 @@ class NewStudentFactory extends Factory
             // Data Pribadi
             'fullname' => fake()->name(),
             'nisn' => '0116489552',
-            'nik' => fake()->nik(),
+            'nik' => strval(fake()->nik()),
             'gender' => mt_rand(1, 2),
             'born_place' => fake()->city(),
             'born_date' => fake()->dateTime('Y-m-d'),
