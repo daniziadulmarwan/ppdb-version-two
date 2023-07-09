@@ -18,12 +18,18 @@ class NotifController extends Controller
 
     public function store(Request $request)
     {
-        foreach($request->user_to_notif as $item) {
+        $request->validate([
+            'user_to_notif.*' => 'required',
+            'text' => 'required'
+        ]);
+
+        foreach ($request->user_to_notif as $item) {
             Notif::create([
                 'user_id' => $item,
                 'text' => $request->text
             ]);
         }
+
         return redirect('/admin/notif');
     }
 

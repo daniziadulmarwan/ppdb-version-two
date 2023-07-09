@@ -35,7 +35,7 @@
                           </div>
                           <!-- Export Buttons End -->
 
-                          <table class="datatable-init nowrap table" data-export-title="Export">
+                          <table class="datatable-init nowrap table" id="table-notif" data-export-title="Export">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -51,7 +51,7 @@
                                     <td>{{ $item->user->name }}</td>
                                     <td>{{ $item->text }}</td>
                                     <td>
-                                      <button class="btn btn-icon btn-sm btn-secondary rounded-circle edit-button" data-id="{{ $item->id }}"><em class="icon ni ni-edit-alt"></em></button>
+                                      <button class="btn btn-icon btn-sm btn-secondary rounded-circle edit-button-live" data-id="{{ $item->id }}"><em class="icon ni ni-edit-alt"></em></button>
                                       <button onclick="destroyUser({{ $item->id }})" class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash"></em></button>
                                     </td>
                                 </tr>
@@ -74,4 +74,11 @@
 
 @push('script')
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
+  {{-- <script>
+    $("#table-notif").on("click", ".edit-button-live", function () {
+      $('#modalCreateNotifLive').modal('show');
+      let id = $(this).data("id");
+      Livewire.emit("getIdNotif", id);
+    });
+  </script> --}}
 @endpush

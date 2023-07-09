@@ -21,7 +21,8 @@
           <div class="nk-sidebar-menu" data-simplebar>
               <ul class="nk-menu">
                     <li class="nk-menu-heading">
-                        <h6 class="overline-title text-primary-alt">Start Up</h6>
+                        {{-- <h6 class="overline-title text-primary-alt">Start Up</h6> --}}
+                        <h6 class="overline-title text-primary-alt">Applications</h6>
                     </li>
                     <li class="nk-menu-item">
                         <a href="/admin/dashboard" class="nk-menu-link">
@@ -35,7 +36,7 @@
                             <span class="nk-menu-text">Students</span>
                         </a>
                     </li>
-                    <li class="nk-menu-item">
+                    {{-- <li class="nk-menu-item">
                         <a href="/admin/document" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-archived-fill"></em></span>
                             <span class="nk-menu-text">Documents</span>
@@ -46,13 +47,13 @@
                             <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
                             <span class="nk-menu-text">Contacts</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <!-- Administrator Start -->
                     @if (auth()->user()->role == 'admin')
-                        <li class="nk-menu-heading">
+                        {{-- <li class="nk-menu-heading">
                             <h6 class="overline-title text-primary-alt">Applications</h6>
-                        </li>
+                        </li> --}}
                         <li class="nk-menu-item">
                             <a href="/admin/notif" class="nk-menu-link">
                                 <span class="nk-menu-icon"><em class="icon ni ni-bell-fill"></em></span>
