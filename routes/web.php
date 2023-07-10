@@ -28,6 +28,7 @@ Route::controller(DashboardController::class)->middleware('auth')->group(functio
 Route::controller(NewStudentController::class)->middleware('auth')->group(function () {
   route::get('/admin/student', 'index');
   route::get('/admin/student/create', 'create');
+  route::post('/admin/student', 'store');
   route::get('/admin/student/{id}/edit', 'edit');
   route::get('/admin/student/export', 'export');
 });

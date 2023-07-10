@@ -13,6 +13,7 @@ return new class extends Migration
 
             // Data Pilihan Sekolah
             $table->string('reg_number');
+
             $table->enum('jenjang', [1, 2]);
             $table->enum('is_pesantren', [1, 2]);
             $table->year('tahun_lulus');

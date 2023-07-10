@@ -169,40 +169,42 @@ $(document).ready(function () {
     }
 
     // Indoregion Dropdown
-    // const id = $("#propinsi").val();
-    // if (id) {
-    //     getRegency(id);
-    // }
-
-    // const regencyId = $("#kabupaten").val();
-    // if (regencyId) {
-    //     getRegencyById(regencyId);
-    // }
-
-    // const districtId = $("#kecamatan").val();
-    // if (districtId) {
-    //     getDistrictById(districtId);
-    // }
-
-    // const villageId = $("#kelurahan").val();
-    // if (villageId) {
-    //     getVillageById(villageId);
-    // }
-
-    $("#propinsi").on("change", function () {
+    $(function() {
         const id = $("#propinsi").val();
-        getRegency(id);
-    });
+        if (id) {
+            getRegency(id);
+        }
 
-    $("#kabupaten").on("change", function () {
-        const id = $("#kabupaten").val();
-        getDistrict(id);
-    });
+        const regencyId = $("#kabupaten").val();
+        if (regencyId) {
+            getRegencyById(regencyId);
+        }
 
-    $("#kecamatan").on("change", function () {
-        const id = $("#kecamatan").val();
-        getVillage(id);
-    });
+        const districtId = $("#kecamatan").val();
+        if (districtId) {
+            getDistrictById(districtId);
+        }
+
+        const villageId = $("#kelurahan").val();
+        if (villageId) {
+            getVillageById(villageId);
+        }
+
+        $("#propinsi").on("change", function () {
+            const id = $("#propinsi").val();
+            getRegency(id);
+        });
+
+        $("#kabupaten").on("change", function () {
+            const id = $("#kabupaten").val();
+            getDistrict(id);
+        });
+
+        $("#kecamatan").on("change", function () {
+            const id = $("#kecamatan").val();
+            getVillage(id);
+        });
+    })
 });
 
 // Delete Student Function
