@@ -1,5 +1,5 @@
-@props(['disabled' => false, 'text'])
+@props(['disabled' => false, 'text', 'for'])
 
 <div class="form-label-group">
-    <label class="form-label" for="username">{{ $text }}</label>
+    <label class="form-label" for="{{ $for }}">{{ $text }}</label>
 </div>

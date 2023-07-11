@@ -1,5 +1,7 @@
 @props([
-  'disabled' => false, 
+  'disabled' => false, 'name', 'error'
 ])
 
-<div class="invalid-feedback">{{ $slot }}</div>
+@if ($error->has($name))
+  <div class="invalid-feedback">{{ $error->first($name) }}</div>
+@endif

@@ -64,32 +64,25 @@
                               <!-- Start Form -->
                               <form action="/signin" class="form-validate is-alter" method="post">
                                   @csrf
+
                                   <div class="form-group">
-                                      <div class="form-label-group">
-                                          <label class="form-label" for="username">Email or Username</label>
-                                      </div>
-                                      <div class="form-control-wrap">
-                                          <input type="text" class="form-control form-control-lg @error('username') is-invalid @enderror" id="username" placeholder="Enter your email address or username" name="username">
-                                          @error('username')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                          @enderror
-                                      </div>
+                                    <x-input-label text="Enter username" for="username" />
+                                    <div class="form-control-wrap">
+                                        <x-text-input name="username" place="Enter username" :error="$errors" />
+                                        <x-input-error name="username" :error="$errors" />
+                                    </div>
                                   </div>
 
                                   <div class="form-group">
-                                      <div class="form-label-group">
-                                          <label class="form-label" for="password">Passcode</label>
-                                      </div>
-                                      <div class="form-control-wrap">
-                                          <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
-                                              <em class="passcode-icon icon-show icon ni ni-eye"></em>
-                                              <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
-                                          </a>
-                                          <input autocomplete="new-password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" id="password" placeholder="Enter your passcode" name="password">
-                                          @error('password')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                          @enderror   
-                                      </div>
+                                    <x-input-label text="Enter password" for="password" />
+                                    <div class="form-control-wrap">
+                                        <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
+                                            <em class="passcode-icon icon-show icon ni ni-eye"></em>
+                                            <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
+                                        </a>
+                                        <x-text-input type="password" name="password" place="Enter password" :error="$errors" />
+                                        <x-input-error name="password" :error="$errors" />
+                                    </div>
                                   </div>
                                   <div class="form-group">
                                       <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>

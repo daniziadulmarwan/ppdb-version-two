@@ -1,2 +1,10 @@
 * Tidak bisa install Laravel-Excel penyebabnya adalah extension 'php_gd / php_gd2' di XAMPP belum diaktifkan,
 cara mengaktifkannya dengan pergi ke apache config di XAMPP, kemudian uncomment extension=gd
+
+
+{
+  "username" : ["The field username required"], "password":[""]
+}
+
+#### How to Access ###
+$error->first('username')
