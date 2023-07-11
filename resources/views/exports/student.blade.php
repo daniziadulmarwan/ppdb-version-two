@@ -15,19 +15,34 @@
         <table class="table">
           <thead>
             <tr>
+              <th>Jenjang</th>
+              <th>Jenis Pendaftaran</th>
+              <th>Pesantren</th>
               <th>Nama Lengkap</th>
               <th>NISN</th>
-              <th>NIK</th>
-              <th>Pesantren</th>
+              <th>Jenis Kelamin</th>
+              <th>Tempat Tanggal Lahir</th>
+              <th>Nomor Whatsapp</th>
+              <th>Alamat Lengkap</th>
+              <th>Nama Ayah</th>
+              <th>Nama Ibu</th>
+              <th>Asal Sekolah</th>
+              <th>Tanggal Daftar Online</th>
             </tr>
           </thead>
           <tbody>
             @foreach ($data as $item)
               <tr>
+                <td>{{ $item->jenjang == 1 ? 'MA' : 'MTs' }}</td>
+                <td>{{ $item->jenis_pendaftaran == 1 ? 'Siswa Baru' : 'Pindahan' }}</td>
                 <th>{{ $item->fullname }}</th>
                 <td>{{ $item->nisn }}</td>
-                <td>{{ $item->nik }}</td>
-                <td>{{ $item->is_pesantren == 1 ? 'Yes' : 'No' }}</td>
+                <td>{{ $item->gender == 1 ? 'Laki-laki' : 'Perempuan' }}</td>
+                <td>{{ $item->born_place}}, {{ \Carbon\Carbon::parse($item->born_date)->translatedFormat('d F Y')  }}</td>
+                <td>{{ $item->nama_ayah }}</td>
+                <td>{{ $item->nama_ibu }}</td>
+                <td>{{ $item->asal_sekolah }}</td>
+                <td>{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y')  }}</td>
               </tr>
             @endforeach
           </tbody>
