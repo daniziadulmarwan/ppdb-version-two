@@ -1,5 +1,5 @@
-@props(['disabled' => false, 'name', '$errormsg'])
+@props([
+  'disabled' => false, 
+])
 
-@error('{{$name}}')
-  <div class="invalid-feedback">{{ $errormsg }}</div>
-@enderror
+<div class="invalid-feedback">{{ $slot }}</div>
