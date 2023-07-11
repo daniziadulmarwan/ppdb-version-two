@@ -64,7 +64,7 @@
                               <!-- Start Form -->
                               <form action="/signin" class="form-validate is-alter" method="post">
                                   @csrf
-                                  <div class="form-group">
+                                  {{-- <div class="form-group">
                                       <div class="form-label-group">
                                           <label class="form-label" for="username">Email or Username</label>
                                       </div>
@@ -74,7 +74,16 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                           @enderror
                                       </div>
+                                  </div> --}}
+
+                                  <div class="form-group">
+                                    <x-input-label text="Username" />
+                                    <div class="form-control-wrap">
+                                        <x-text-input name="username" placeholder="Enter username" />
+                                        <x-input-error name="username" :errormsg="$errors->get('username')" />
+                                    </div>
                                   </div>
+
                                   <div class="form-group">
                                       <div class="form-label-group">
                                           <label class="form-label" for="password">Passcode</label>

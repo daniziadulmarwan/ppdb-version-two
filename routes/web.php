@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'pages.index');
 
 Route::controller(AuthController::class)->group(function () {
+  route::get('/signup', 'signup');
   route::get('/signin', 'signin')->name('login');
   route::post('/signin', 'login');
   route::delete('/signout', 'logout');

@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    public function signup()
+    {
+        if (Auth::user()) {
+            return redirect('/admin/dashboard');
+        }
+        return view('pages.signup');
+    }
+
     public function signin()
     {
         if (Auth::user()) {
