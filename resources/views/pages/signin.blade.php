@@ -62,32 +62,28 @@
                               </div>
 
                               <!-- Start Form -->
-                              <form action="/signin" class="form-validate is-alter" method="post">
+                                <form action="/signin" class="form-validate is-alter" method="post">
                                   @csrf
 
                                   <div class="form-group">
-                                    <x-input-label text="Enter username" for="username" />
+                                    <x-form.input-label text="Enter username" for="username" />
                                     <div class="form-control-wrap">
-                                        <x-text-input name="username" place="Enter username" :error="$errors" />
-                                        <x-input-error name="username" :error="$errors" />
+                                        <x-form.input-text name="username" place="Enter username" :error="$errors" />
+                                        <x-form.input-error name="username" :error="$errors" />
                                     </div>
                                   </div>
 
                                   <div class="form-group">
-                                    <x-input-label text="Enter password" for="password" />
+                                    <x-form.input-label text="Enter password" for="password" />
                                     <div class="form-control-wrap">
-                                        <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
-                                            <em class="passcode-icon icon-show icon ni ni-eye"></em>
-                                            <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
-                                        </a>
-                                        <x-text-input type="password" name="password" place="Enter password" :error="$errors" />
-                                        <x-input-error name="password" :error="$errors" />
+                                        <x-form.input-password name="password" place="Enter password" :error="$errors" />
+                                        <x-form.input-error name="password" :error="$errors" />
                                     </div>
                                   </div>
                                   <div class="form-group">
                                       <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
                                   </div>
-                              </form>
+                                </form>
                               <!-- End Form -->
 
                             @endif
