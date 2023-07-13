@@ -8,7 +8,7 @@
     <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
     
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="shortcut icon" href="/images/logo.png">
     
     <!-- Page Title  -->
     <title>AL-AMIN PPDB | Signin</title>
@@ -52,16 +52,16 @@
                                   </div>
                               </div>
                             @else
-                              <div class="nk-block-head">
-                                  <div class="nk-block-head-content">
-                                      <h5 class="nk-block-title">Sign-In</h5>
-                                      <div class="nk-block-des">
-                                          <p>Enter username and password to get access.</p>
-                                      </div>
-                                  </div>
-                              </div>
+                                <div class="nk-block-head">
+                                    <div class="nk-block-head-content">
+                                        <h5 class="nk-block-title">Sign-In</h5>
+                                        <div class="nk-block-des">
+                                            <p>Enter username and password to get access.</p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                              <!-- Start Form -->
+                                <!-- Start Form -->
                                 <form action="/signin" class="form-validate is-alter" method="post">
                                   @csrf
 
@@ -84,7 +84,15 @@
                                       <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
                                   </div>
                                 </form>
-                              <!-- End Form -->
+                                <!-- End Form -->
+
+                                <div class="nk-block-head mt-4">
+                                    <div class="nk-block-head-content">
+                                        <div class="nk-block-des text-center">
+                                            <p>Don't have account ? <a href="/signup">Register</a></p>
+                                        </div>
+                                    </div>
+                                </div>
 
                             @endif
 

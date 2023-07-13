@@ -99,6 +99,14 @@
                     </form>
                     <!-- End Form -->
 
+                    <div class="nk-block-head mt-4">
+                        <div class="nk-block-head-content">
+                            <div class="nk-block-des text-center">
+                                <p>Already have account ? <a href="/signin">Sign In</a></p>
+                            </div>
+                        </div>
+                    </div>
+
                   @endif
 
                 </div>

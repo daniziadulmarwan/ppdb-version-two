@@ -41,6 +41,7 @@ Route::controller(NewStudentController::class)->middleware('auth')->group(functi
   route::post('/admin/student', 'store');
   route::get('/admin/student/{id}/edit', 'edit');
   route::get('/admin/student/export', 'export');
+  route::delete('/admin/student/{id}', 'destroy');
 });
 
 Route::controller(DocumentController::class)->middleware('auth')->group(function () {

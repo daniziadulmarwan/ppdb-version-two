@@ -103,10 +103,10 @@
 
 
 @push('script')
+{{ $dataTable->scripts(attributes: ['type' => 'module']) }}
   {{-- <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script> --}}
   <script src="https://cdn.datatables.net/v/bs5/dt-1.13.5/datatables.min.js"></script>
   <script src="/assets/js/example-sweetalert.js?ver=3.1.1"></script>
-  {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
   <script src="/assets/custom/js/student.js"></script>
 
   <script>
