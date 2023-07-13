@@ -26,7 +26,7 @@
 
 </head>
 
-<body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme dark-mode">
+<body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme light-mode">
     <div class="nk-app-root">
         <div class="nk-main ">
 

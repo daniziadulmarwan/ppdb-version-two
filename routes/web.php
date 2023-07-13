@@ -21,6 +21,15 @@ Route::controller(AuthController::class)->group(function () {
   route::delete('/signout', 'logout');
 });
 
+// User Routers
+Route::prefix('/user')->group(function () {
+  Route::get('/dashboard', function () {
+    return view('users.dashboard.index');
+  });
+});
+
+
+
 // Auth
 Route::controller(DashboardController::class)->middleware('auth')->group(function () {
   route::get('/admin/dashboard', 'index');

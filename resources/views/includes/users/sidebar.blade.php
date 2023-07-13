@@ -24,13 +24,13 @@
             <h6 class="overline-title text-primary-alt">Applications</h6>
           </li>
           <li class="nk-menu-item">
-            <a href="/admin/dashboard" class="nk-menu-link">
+            <a href="/user/dashboard" class="nk-menu-link">
                 <span class="nk-menu-icon"><em class="icon ni ni-grid-alt-fill"></em></span>
                 <span class="nk-menu-text">Dashboard</span>
             </a>
           </li>
           <li class="nk-menu-item">
-            <a href="/admin/student" class="nk-menu-link">
+            <a href="/user/student" class="nk-menu-link">
                 <span class="nk-menu-icon"><em class="icon ni ni-user-alt"></em></span>
                 <span class="nk-menu-text">Students</span>
             </a>
