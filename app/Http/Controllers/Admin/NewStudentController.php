@@ -101,6 +101,6 @@ class NewStudentController extends Controller
     {
         $data = NewStudent::findOrFail($id);
         $data->delete();
-        return response()->json($data);
+        return response()->json(['message' => 'success']);
     }
 }

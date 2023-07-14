@@ -219,28 +219,29 @@ function destroyNewStudent(id) {
         confirmButtonText: "Yes, delete it!",
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`/admin/student/${id}`, {
+            fetch(`/admin/student/${+id}`, {
                 headers: {
                     "Content-type": "application/json",
-                    "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+                        "content"
+                    ),
                 },
                 method: "delete",
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data);
-                    // if (data.message === "success") {
-                    //     Swal.fire({
-                    //         icon: "success",
-                    //         title: "Selamat!",
-                    //         text: "Data berhasil dihapus",
-                    //         showConfirmButton: false,
-                    //         timer: 1500,
-                    //     });
-                    //     setTimeout(() => {
-                    //         window.location.reload();
-                    //     }, 1500);
-                    // }
+                    if (data.message === "success") {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Selamat!",
+                            text: "Data berhasil dihapus",
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1500);
+                    }
                 });
         }
     });
