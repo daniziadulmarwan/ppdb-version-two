@@ -99,8 +99,8 @@ class NewStudentController extends Controller
 
     public function destroy(string $id)
     {
-        $data = NewStudent::find($id);
+        $data = NewStudent::findOrFail($id);
         $data->delete();
-        return response()->json(['message' => 'success']);
+        return response()->json($data);
     }
 }
