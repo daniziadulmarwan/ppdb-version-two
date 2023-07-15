@@ -74,6 +74,10 @@
 @push('script')
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
   <script>
+    $("#multi-user-select").select2();
+
+
+
     function destroyUser(id) {
         Swal.fire({
           title: "Are you sure?",
