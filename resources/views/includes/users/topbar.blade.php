@@ -26,7 +26,7 @@
                           <em class="icon ni ni-user-alt"></em>
                       </div>
                       <div class="user-info d-none d-xl-block">
-                          @if (auth()->user()->role == 'admin')
+                          @if (true)
                               <div class="user-status user-status-unverified text-success">
                                   Administrator
                               </div>
@@ -36,7 +36,7 @@
                               </div>
                           @endif
                           <div class="user-name dropdown-indicator">
-                              {{ auth()->user()->name }}
+                              {{ 'Dani' }}
                           </div>
                       </div>
                   </div>
@@ -48,8 +48,8 @@
                               <span>ZM</span>
                           </div>
                           <div class="user-info">
-                              <span class="lead-text">{{ auth()->user()->name }}</span>
-                              <span class="sub-text">{{ auth()->user()->username }}</span>
+                              <span class="lead-text">{{ 'Dani' }}</span>
+                              <span class="sub-text">{{ 'Zeiteim' }}</span>
                           </div>
                       </div>
                   </div>

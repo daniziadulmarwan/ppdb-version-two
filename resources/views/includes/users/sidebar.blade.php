@@ -37,7 +37,7 @@
           </li>
 
           <!-- Administrator Start -->
-          @if (auth()->user()->role == 'admin')
+          @if (true)
             <li class="nk-menu-item">
                 <a href="/admin/notif" class="nk-menu-link">
                     <span class="nk-menu-icon"><em class="icon ni ni-bell-fill"></em></span>
