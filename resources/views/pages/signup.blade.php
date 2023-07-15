@@ -35,7 +35,7 @@
 
                   <!-- Start Brand -->
                   <div class="brand-logo pb-5">
-                      <a href="/signin" class="logo-link">
+                      <a href="/signup" class="logo-link">
                           <img class="logo-light logo-img logo-img-lg" src="/assets/images/ppdb-dark.png" srcset="/assets/images/ppdb-dark.png 2x" alt="logo">
                           <img class="logo-dark logo-img logo-img-lg" src="/assets/images/ppdb-light.png" srcset="/assets/images/ppdb-light.png 2x" alt="logo-dark">
                       </a>
