@@ -11,7 +11,7 @@ class PendaftaranFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_id' => 1,
+            'student_id' => mt_rand(1, 200),
 
             // Data Pilihan Sekolah
             'reg_number' => Str::upper('pb' . date('Y') . '-' . Str::random(8)),

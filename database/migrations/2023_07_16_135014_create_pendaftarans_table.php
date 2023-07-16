@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('pendaftarans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->constrained()->onDelete('cascade');
+            $table->integer('student_id')->constrained()->onDelete('cascade');
 
             // Data Pilihan Sekolah
             $table->string('reg_number');
