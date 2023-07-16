@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -10,7 +11,7 @@ class PendaftaranFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_id' => mt_rand(1, 500),
+            'student_id' => 1,
 
             // Data Pilihan Sekolah
             'reg_number' => Str::upper('pb' . date('Y') . '-' . Str::random(8)),

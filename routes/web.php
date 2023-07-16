@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IndonesiaController;
 use App\Models\NewStudent;
+use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 
 // Guest
@@ -24,6 +25,7 @@ Route::controller(AuthController::class)->group(function () {
 // User Routers
 Route::prefix('/user')->group(function () {
   Route::get('/dashboard', function () {
+    $data = Student::find(1);
     return view('users.dashboard.index');
   });
 });

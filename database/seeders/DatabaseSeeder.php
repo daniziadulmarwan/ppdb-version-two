@@ -29,7 +29,11 @@ class DatabaseSeeder extends Seeder
             'time' => 'off'
         ]);
 
-        Student::factory()->create();
+        Student::create([
+            'fullname' => fake()->name(),
+            'email' => fake()->email(),
+            'password' => bcrypt('password'),
+        ]);
 
         $this->call(IndoRegionProvinceSeeder::class);
         $this->call(IndoRegionRegencySeeder::class);
