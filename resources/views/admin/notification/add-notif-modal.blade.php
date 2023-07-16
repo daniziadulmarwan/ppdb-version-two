@@ -1,11 +1,4 @@
-<x-modal id="modalCreateNotif">
-  <div style="display: flex; justify-content: space-between; align-items: center" class="mb-1">
-    <h5 class="modal-title">Add Notification</h5>
-    <a href="#" class="close" data-bs-dismiss="modal" aria-label="Close">
-        <em class="icon ni ni-cross"></em>
-    </a>
-  </div>
-  <hr class="mb-3" style="border-style: dotted; border-color: rgb(28, 214, 152)">
+<x-modals id="modalCreateNotif" title="Add Notification">
 
   <!-- Form Start -->
   <form class="form-validate is-alter" method="post" action="/admin/notif/create">
@@ -38,6 +31,7 @@
     <div class="form-group">
       <button type="submit" class="btn btn-lg btn-success w-100 block" style="text-align: center !important; display: inline-flex; align-items: center; justify-content: center"><em class="icon ni ni-send"></em><span>Submit</span></button>
     </div>
-</form>
+  </form>
   <!-- Form End -->
-</x-modal>
+
+</x-modals>

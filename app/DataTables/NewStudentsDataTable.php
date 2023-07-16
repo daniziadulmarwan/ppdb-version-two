@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\NewStudent;
+use App\Models\Pendaftaran;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -48,7 +48,7 @@ class NewStudentsDataTable extends DataTable
             ->rawColumns(['jenjang', 'pesantren', 'tanggal daftar', 'action', 'NISN']);
     }
 
-    public function query(NewStudent $model): QueryBuilder
+    public function query(Pendaftaran $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -56,7 +56,7 @@ class NewStudentsDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('newstudents-table')
+            ->setTableId('pendaftarans-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->orderBy(1)
