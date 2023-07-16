@@ -5,7 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\NewStudent;
+use App\Models\Pendaftaran;
 use App\Models\SettingTime;
+use App\Models\Student;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -21,11 +23,13 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin'
         ]);
 
-        NewStudent::factory(500)->create();
+        Pendaftaran::factory(500)->create();
 
         SettingTime::create([
             'time' => 'off'
         ]);
+
+        Student::factory()->create();
 
         $this->call(IndoRegionProvinceSeeder::class);
         $this->call(IndoRegionRegencySeeder::class);
