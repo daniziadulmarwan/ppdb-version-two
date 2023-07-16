@@ -32,7 +32,7 @@
                         <td>
                           <button class="btn btn-icon btn-sm btn-secondary rounded-circle edit-button" data-id="{{$item->id}}"><em class="icon ni ni-edit-alt"></em></button>
                           
-                          <button onclick="destroyUser({{$item->id}})" class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash"></em></button>
+                          <button onclick="deleteData('/admin/setting/{{ $item->id }}')" class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash"></em></button>
                         </td>
                     </tr>
                 @endforeach

@@ -112,46 +112,6 @@
         }, 1500);
     });
 
-    function destroyUser(id) {
-        Swal.fire({
-        title: "Are you sure?",
-        text: "You want to destroy this data!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "btn-success",
-        cancelButtonColor: "btn-danger",
-        confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`/admin/setting/${id}`, {
-                            headers: {
-                                'Content-type': 'application/json',
-                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                            },
-                            method: 'delete'
-                        }).then(res => res.json()).then(data => {
-                            if(data.message === 'success') {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Selamat!',
-                                    text: 'Data berhasil dihapus',
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                })
-                                setTimeout(() => {
-                                    window.location.reload()
-                                }, 1500);
-                            }
-                        }).catch(err => {
-                            console.log(err);
-                        });
-            }
-            
-            }).catch((error) => {
-                console.log(error);
-            });
-    }
-
     Livewire.on('destroyDataUser', (msg) => {
         Swal.fire({
             icon: 'success',

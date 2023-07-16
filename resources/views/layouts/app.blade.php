@@ -60,6 +60,7 @@
     <script src="/assets/js/bundle.js?ver=3.1.1"></script>
     <script src="/assets/js/scripts.js?ver=3.1.1"></script>
     <script src="/assets/js/charts/chart-ecommerce.js?ver=3.1.1"></script>
+    <script src="/assets/custom/js/helpers.js"></script>
 
     <!-- Addon Javascript -->
     @stack('script')

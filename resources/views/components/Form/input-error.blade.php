@@ -1,5 +1,7 @@
 @props([
-  'disabled' => false, 'name', 'error'
+  'disabled' => false, 
+  'name', 
+  'error'
 ])
 
 @if ($error->has($name))

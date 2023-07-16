@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\NotifController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IndonesiaController;
-use App\Models\NewStudent;
+use App\Models\Pendaftaran;
 use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 
@@ -72,8 +72,8 @@ Route::fallback(function () {
 
 // Chart Route
 Route::get('/charts', function () {
-  $datas = NewStudent::all();
-  $mahad = NewStudent::where('is_pesantren', 1)->get();
+  $datas = Pendaftaran::all();
+  $mahad = Pendaftaran::where('is_pesantren', 1)->get();
 
   // $yearly = NewStudent::select('jenjang', 'tahun_ppdb')->get();
   $yearly = collect($datas)->groupBy(['jenjang', function ($item) {

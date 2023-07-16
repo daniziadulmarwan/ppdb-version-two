@@ -20,6 +20,9 @@ class SettingController extends Controller
     {
         $data = User::find($id);
         $data->delete();
-        return response()->json(['message' => 'success']);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Berhasil menghapus data'
+        ]);
     }
 }
