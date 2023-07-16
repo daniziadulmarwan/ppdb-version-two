@@ -36,3 +36,7 @@ function deleteData(url) {
     }
   });
 }
+
+function makeSelectTwo(id) {
+  $(id).select2();
+}

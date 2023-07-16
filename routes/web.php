@@ -61,7 +61,6 @@ Route::controller(SettingController::class)->middleware('auth')->group(function 
 
 Route::controller(NotifController::class)->middleware('auth')->group(function () {
   route::get('/admin/notif', 'index');
-  route::post('/admin/notif/create', 'store');
   route::delete('/admin/notif/{id}', 'destroy');
 });
 

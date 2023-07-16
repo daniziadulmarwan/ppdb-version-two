@@ -1,16 +1,5 @@
-<x-modal id="userUpdateModal">
-  <!-- Start Header -->
-  <div style="display: flex; justify-content: space-between; align-items: center" class="mb-1">
-    <h5 class="modal-title">Edit User Data</h5>
-    <a href="#" class="close" data-bs-dismiss="modal" aria-label="Close">
-        <em class="icon ni ni-cross"></em>
-    </a>
-  </div>
-  <!-- End Header -->
-    
-  <hr class="mb-3" style="border-style: dotted; border-color: rgb(28, 214, 152)">
-
+<x-modals id="userUpdateModal" title="Edit User Data">
   <!-- Start Form -->
   @livewire('setting-edit-user')
   <!-- Start Form -->
-</x-modal>
+</x-modals>

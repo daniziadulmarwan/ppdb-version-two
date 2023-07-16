@@ -51,7 +51,7 @@
                                     <td>{{ $item->user->name }}</td>
                                     <td>{{ $item->text }}</td>
                                     <td>
-                                      <button onclick="destroyUser({{ $item->id }})" class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash"></em></button>
+                                      <button onclick="deleteData('/admin/notif/{{ $item->id }}' )" class="btn btn-icon btn-sm btn-danger rounded-circle"><em class="icon ni ni-trash"></em></button>
                                     </td>
                                 </tr>
                               @endforeach
@@ -73,49 +73,8 @@
 
 @push('script')
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
+  <script src="/assets/custom/js/helpers.js"></script>
   <script>
-    $("#multi-user-select").select2();
-
-
-
-    function destroyUser(id) {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You want to destroy this data!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "btn-success",
-          cancelButtonColor: "btn-danger",
-          confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`/admin/notif/${id}`, {
-                  headers: {
-                      'Content-type': 'application/json',
-                      'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                  },
-                  method: 'delete'
-                }).then(res => res.json()).then(data => {
-                    if(data.message === 'success') {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Selamat!',
-                            text: 'Data berhasil dihapus',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        setTimeout(() => {
-                            window.location.reload()
-                        }, 1500);
-                    }
-                }).catch(err => {
-                    console.log(err);
-                });
-            }
-        }).catch((error) => {
-            console.log(error);
-        });
-    }
-    
+    makeSelectTwo('#multi-user-select');
   </script>
 @endpush
