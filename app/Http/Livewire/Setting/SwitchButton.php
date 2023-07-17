@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Setting;
 
 use App\Models\SettingTime;
 use Livewire\Component;
 
-class SettingSwitch extends Component
+class SwitchButton extends Component
 {
     public $value = true;
 
@@ -16,7 +16,7 @@ class SettingSwitch extends Component
 
     public function render()
     {
-        return view('livewire.setting-switch');
+        return view('livewire.setting.switch-button');
     }
 
     public function mount()

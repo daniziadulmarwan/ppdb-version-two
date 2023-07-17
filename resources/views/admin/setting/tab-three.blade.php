@@ -2,7 +2,7 @@
   <div class="card">
     <div class="nk-ecwg nk-ecwg6">
       <div class="card-inner">
-        @livewire('setting-change-password')
+        @livewire('setting.change-password')
       </div>
     </div>
   </div>

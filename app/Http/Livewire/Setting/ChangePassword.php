@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Setting;
 
 use App\Models\User;
 use Livewire\Component;
 
-class SettingChangePassword extends Component
+class ChangePassword extends Component
 {
     public $newPassword;
     public $confirmNewPassword;
@@ -17,7 +17,7 @@ class SettingChangePassword extends Component
 
     public function render()
     {
-        return view('livewire.setting-change-password');
+        return view('livewire.setting.change-password');
     }
 
     public function updatePassword()

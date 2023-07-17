@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Setting;
 
 use App\Models\User;
 use Livewire\Component;
 
-class SettingEditUser extends Component
+class EditUser extends Component
 {
     public $editId;
 
@@ -19,10 +19,10 @@ class SettingEditUser extends Component
 
     public function render()
     {
-        return view('livewire.setting-edit-user');
+        return view('livewire.setting.edit-user');
     }
 
-    public function edit($id) 
+    public function edit($id)
     {
         $this->editId = $id;
         $data = User::find($id);
@@ -36,7 +36,7 @@ class SettingEditUser extends Component
     {
         $data = User::find($this->editId);
 
-        if($this->passwordEdit == null) {
+        if ($this->passwordEdit == null) {
             $data->name = $this->nameEdit;
             $data->username = $this->usernameEdit;
             $data->role = $this->roleEdit;
