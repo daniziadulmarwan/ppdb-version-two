@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Setting;
 
 use App\Models\User;
 use Livewire\Component;
 
-class CreateNewUser extends Component
+class CreateUser extends Component
 {
     public $name;
     public $username;
@@ -23,7 +23,7 @@ class CreateNewUser extends Component
 
     public function render()
     {
-        return view('livewire.create-new-user');
+        return view('livewire.setting.create-user');
     }
 
     public function submit()
