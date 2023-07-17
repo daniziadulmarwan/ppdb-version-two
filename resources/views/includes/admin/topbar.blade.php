@@ -57,11 +57,11 @@
                             <ul class="link-list">
                                 <li><a href="/admin/student"><em class="icon ni ni-user-alt"></em><span>Student</span></a></li>
 
-                                <li><a href="html/user-profile-setting.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                <li><a href="/admin/setting"><em class="icon ni ni-setting-alt"></em><span>Setting</span></a></li>
 
-                                <li><a href="html/user-profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                {{-- <li><a href="html/user-profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li> --}}
 
-                                <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
+                                @livewire('theme')
                             </ul>
                         </div>
                         <div class="dropdown-inner">

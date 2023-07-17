@@ -8,6 +8,7 @@ use App\Models\NewStudent;
 use App\Models\Pendaftaran;
 use App\Models\SettingTime;
 use App\Models\Student;
+use App\Models\Theme;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -33,6 +34,10 @@ class DatabaseSeeder extends Seeder
             'fullname' => fake()->name(),
             'email' => fake()->email(),
             'password' => bcrypt('password'),
+        ]);
+
+        Theme::create([
+            'mode' => 'light'
         ]);
 
         $this->call(IndoRegionProvinceSeeder::class);
