@@ -22,7 +22,7 @@ class SettingSwitch extends Component
     public function mount()
     {
         $data = SettingTime::first();
-        if($data->time == 'off') {
+        if ($data->time == 'off') {
             $this->value = false;
         } else {
             $this->value = true;
@@ -34,6 +34,8 @@ class SettingSwitch extends Component
         $data = SettingTime::first();
         $data->time = $val;
         $data->save();
-        $this->emit('turnedSwitch');
+        $this->emit('turnedSwitch', [
+            'value' => $data->time
+        ]);
     }
 }

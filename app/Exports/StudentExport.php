@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\NewStudent;
+use App\Models\Pendaftaran;
 use Illuminate\Database\Eloquent\Collection;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
@@ -14,7 +14,7 @@ class StudentExport implements FromView
     public function view(): View
     {
         return view('exports.student', [
-            'data' => NewStudent::all()
+            'data' => Pendaftaran::all()
         ]);
     }
 

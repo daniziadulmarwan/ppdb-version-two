@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\NewStudent;
+use App\Models\Pendaftaran;
 use App\Models\Province;
 use Livewire\Component;
 
@@ -19,7 +19,7 @@ class ShowStudent extends Component
 
     public function show($id)
     {
-        $result = NewStudent::find($id);
+        $result = Pendaftaran::find($id);
         $province = Province::find($result->province);
         $this->data = $result;
     }

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @push('style')
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 @endpush
 
 @section('content')
@@ -95,73 +96,83 @@
 @endsection
 
 @push('script')
-  <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
 
-  <script>
-    Livewire.on('createNewUser', (msg) => {
-        $('#modalCreateNewUser').modal('hide');
-        Swal.fire({
-            icon: 'success',
-            title: 'Selamat!',
-            text: msg,
-            showConfirmButton: false,
-            timer: 1500
+    <script>
+        Livewire.on('createNewUser', (msg) => {
+            $('#modalCreateNewUser').modal('hide');
+            Swal.fire({
+                icon: 'success',
+                title: 'Selamat!',
+                text: msg,
+                showConfirmButton: false,
+                timer: 1500
+            });
+            setTimeout(() => {
+                window.location.reload()
+            }, 1500);
         });
-        setTimeout(() => {
-            window.location.reload()
-        }, 1500);
-    });
 
-    Livewire.on('destroyDataUser', (msg) => {
-        Swal.fire({
-            icon: 'success',
-            title: 'Selamat!',
-            text: 'Success delete data',
-            showConfirmButton: false,
-            timer: 1500
+        Livewire.on('destroyDataUser', (msg) => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Selamat!',
+                text: 'Success delete data',
+                showConfirmButton: false,
+                timer: 1500
+            });
+            setTimeout(() => {
+                window.location.reload()
+            }, 1500);
         });
-        setTimeout(() => {
-            window.location.reload()
-        }, 1500);
-    });
 
-    $('.table').on('click', '.edit-button', function() {
-        $('#userUpdateModal').modal('show')
-        let id = $(this).data('id');
-        Livewire.emit('getSettingEditId', id);
-    })
-
-    Livewire.on('userUpdated', () => {
-        $('#userUpdateModal').modal('hide');
-        Swal.fire({
-            icon: 'success',
-            title: 'Selamat!',
-            text: 'Berhasil update data',
-            showConfirmButton: false,
-            timer: 1500
+        Livewire.on('turnedSwitch', (val) => {
+            console.log(val)
+            if(val.value === 'on') {
+                toastr.success('Pendaftaran dibuka!')
+            } else {
+                toastr.error( "Pendaftaran ditutup!")
+            }
         });
-        setTimeout(() => {
-            window.location.reload()
-        }, 1500);
-    });
 
-    Livewire.on('passwordChanged', () => {
-        Swal.fire({
-            icon: 'success',
-            title: 'Selamat!',
-            text: 'Success update password',
-            showConfirmButton: false,
-            timer: 1500
+        $('.table').on('click', '.edit-button', function() {
+            $('#userUpdateModal').modal('show')
+            let id = $(this).data('id');
+            Livewire.emit('getSettingEditId', id);
+        })
+
+        Livewire.on('userUpdated', () => {
+            $('#userUpdateModal').modal('hide');
+            Swal.fire({
+                icon: 'success',
+                title: 'Selamat!',
+                text: 'Berhasil update data',
+                showConfirmButton: false,
+                timer: 1500
+            });
+            setTimeout(() => {
+                window.location.reload()
+            }, 1500);
         });
-        setTimeout(() => {
-            window.location.reload()
-        }, 1500);
-    });
 
-    document.getElementById('customSwitch2').addEventListener('change', (e) => {
-        this.checkboxValue = e.target.checked ? 'on' : 'off';
-        console.log(this.checkboxValue)
-        Livewire.emit('turnSwitch', this.checkboxValue);
-    });
-  </script>
+        Livewire.on('passwordChanged', () => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Selamat!',
+                text: 'Success update password',
+                showConfirmButton: false,
+                timer: 1500
+            });
+            setTimeout(() => {
+                window.location.reload()
+            }, 1500);
+        });
+
+        document.getElementById('customSwitch2').addEventListener('change', (e) => {
+            this.checkboxValue = e.target.checked ? 'on' : 'off';
+            console.log(this.checkboxValue)
+            Livewire.emit('turnSwitch', this.checkboxValue);
+        });
+    </script>
 @endpush

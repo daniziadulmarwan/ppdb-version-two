@@ -74,6 +74,7 @@
 @push('script')
   <script src="/assets/js/libs/datatable-btns.js?ver=3.1.1"></script>
   <script src="/assets/custom/js/helpers.js"></script>
+
   <script>
     makeSelectTwo('#multi-user-select');
   </script>
