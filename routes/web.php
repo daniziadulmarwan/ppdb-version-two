@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IndonesiaController;
 use App\Models\Pendaftaran;
 use App\Models\Student;
+use App\Models\Theme;
 use Illuminate\Support\Facades\Route;
 
 // Guest
@@ -105,4 +106,9 @@ Route::controller(IndonesiaController::class)->group(function () {
   route::post('/kabupaten/byId', 'GetRegencyById');
   route::post('/kecamatan/byId', 'GetDistrictById');
   route::post('/kelurahan/byId', 'GetVillageById');
+});
+
+// Theme Route
+Route::get('/theme', function () {
+  return response()->json(['mode' => Theme::first()]);
 });

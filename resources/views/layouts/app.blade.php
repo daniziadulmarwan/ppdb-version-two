@@ -26,7 +26,7 @@
 
 </head>
 
-<body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme dark-mode theme-wrapper">
+<body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme theme-wrapper">
     <div class="nk-app-root">
         <div class="nk-main ">
 
@@ -66,6 +66,17 @@
     @stack('script')
 
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/theme').then(res => res.json()).then(data => {
+                const { mode } = data.mode;
+                if(mode === 'light') {
+                    $('.theme-wrapper').addClass('light-mode')
+                } else {
+                    $('.theme-wrapper').addClass('dark-mode')
+                }
+            });
+        });
+
         document.getElementById('darkMode').addEventListener('change', (e) => {
             this.checkboxValue = e.target.checked ? 'on' : 'off';
             Livewire.emit('changeTheme', this.checkboxValue);
