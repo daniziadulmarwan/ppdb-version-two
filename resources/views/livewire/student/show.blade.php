@@ -1,4 +1,3 @@
-
 <div class="modal-body row" style="min-height: 500px;">
   <div style="background: linear-gradient(90deg, rgba(185,11,200,1) 0%, rgba(115,0,255,1) 100%); display: flex; flex-direction: column; justify-content: center; align-items: center" class="col-md-4 rounded">
     <div class="pt-2">

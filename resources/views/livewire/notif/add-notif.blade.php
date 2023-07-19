@@ -31,10 +31,10 @@
   
 </form>
 
-  <script>
-    document.addEventListener('livewire:load', function () {
-      $('#multi-user-select').on('change', function() {
-        @this.ids = $(this).val();
-      });
+<script>
+  document.addEventListener('livewire:load', function () {
+    $('#multi-user-select').on('change', function() {
+      @this.ids = $(this).val();
     });
-  </script>
+  });
+</script>

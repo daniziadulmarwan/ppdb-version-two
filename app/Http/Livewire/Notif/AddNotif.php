@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Notif;
 
 use App\Models\Notif;
-use App\Models\User;
 use Livewire\Component;
 
-class NotifAddNotif extends Component
+class AddNotif extends Component
 {
     public $text;
     public $ids;
@@ -18,10 +17,7 @@ class NotifAddNotif extends Component
 
     public function render()
     {
-        return view('livewire.notif-add-notif', [
-            'data' => User::select('id', 'name')->where('role', '!=', 'admin')->get(),
-            'notif' => Notif::whereRelation('user', 'role', '!=', 'admin')->get()
-        ]);
+        return view('livewire.notif.add-notif');
     }
 
     public function save()

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Student;
 
 use App\Models\Pendaftaran;
 use App\Models\Province;
 use Livewire\Component;
 
-class ShowStudent extends Component
+class Show extends Component
 {
     public $data;
 
@@ -14,7 +14,7 @@ class ShowStudent extends Component
 
     public function render()
     {
-        return view('livewire.show-student');
+        return view('livewire.student.show');
     }
 
     public function show($id)
